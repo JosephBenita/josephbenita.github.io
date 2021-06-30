@@ -3119,6 +3119,7 @@ input, select, textarea {
 		}
 
 			#sidebar > .inner > * {
+				background-color:#3e8f49
 				border-bottom: solid 2px rgba(210, 215, 217, 0.75);
 				margin: 0 0 3.5em 0;
 				padding: 0 0 3.5em 0;
