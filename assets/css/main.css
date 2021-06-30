@@ -2471,7 +2471,7 @@ input, select, textarea {
 		color: #3a802c !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: "Roboto Slab", serif;
+		font-family: "Asap", sans-serif;
 		font-size: 0.8em;
 		font-weight: 700;
 		height: 3.5em;
@@ -3317,7 +3317,7 @@ input, select, textarea {
 		#header .logo {
 			border-bottom: 0;
 			color: inherit;
-			font-family: "Roboto Slab", serif;
+			font-family: "Asap", sans-serif;
 			font-size: 1.125em;
 		}
 
