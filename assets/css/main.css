@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #c7c2c2;
+		background: #dad6d6;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
