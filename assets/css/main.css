@@ -3307,7 +3307,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 5px #143a0d;
+		border-bottom: solid 2px #143a0d;
 		padding: 6em 0 1em 0;
 		position: relative;
 	}
