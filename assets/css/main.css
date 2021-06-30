@@ -3119,7 +3119,6 @@ input, select, textarea {
 		}
 
 			#sidebar > .inner > * {
-				background-color:#3e8f49;
 				border-bottom: solid 2px rgba(210, 215, 217, 0.75);
 				margin: 0 0 3.5em 0;
 				padding: 0 0 3.5em 0;
@@ -3308,7 +3307,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 2px #143a0d;
+		/*border-bottom: solid 2px #143a0d;*/
 		padding: 6em 0 1em 0;
 		position: relative;
 	}
