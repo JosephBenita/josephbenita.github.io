@@ -1798,7 +1798,7 @@ input, select, textarea {
 	}
 
 	header p {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: "Asap", sans-serif;
 		font-size: 2em;
 		font-weight: 400;
 		letter-spacing: 0.075em;
@@ -1807,7 +1807,7 @@ input, select, textarea {
 	}
 
 	header.major > :last-child {
-		border-bottom: solid 3px #143a0d;
+		border-bottom: solid 2px #143a0d;
 		display: inline-block;
 		margin: 0 0 2em 0;
 		padding: 0 0.75em 0.5em 0;
