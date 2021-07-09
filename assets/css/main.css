@@ -3309,7 +3309,8 @@ input, select, textarea {
 		display: flex;
 		/*border-bottom: solid 2px #143a0d;*/
 		padding: 0px;
-		position: relative;
+		/*position: relative;*/
+		position:fixed
 	}
 
 		#header > * {
