@@ -3312,6 +3312,7 @@ input, select, textarea {
 		margin: 5px 0px 5px 0px;
 		position: relative;
 		border:#313131;
+		background-color:#eff1f2;
 	}
 
 		#header > * {
