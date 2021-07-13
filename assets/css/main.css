@@ -2055,8 +2055,8 @@ input, select, textarea {
 /* Vidéo */
 
 	video {
-  	width: 400px;
-  	height: 400px;
+  	width: 600px;
+  	height: 600px;
   	border: 0px solid rgba(0, 0, 0, 0);
 	}
 
