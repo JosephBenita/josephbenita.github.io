@@ -49,7 +49,7 @@ function sleep (time) {
 }
 
 let btn = document.createElement("button");
-btn.innerHTML = "1";
+btn.innerHTML = "Animate";
 btn.addEventListener("click", () => {
     animate(0, 0);
 });
