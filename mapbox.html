@@ -16,16 +16,16 @@ body { margin: 0; padding: 0; }
     <div id="map"></div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw';
-    var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-74.5, 40], // starting position
-    zoom: 9 // starting zoom
-    });
+        var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-74.5, 40], // starting position
+        zoom: 9 // starting zoom
+        });
      
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
     </script>
      
-    </body>
-    </html>
+</body>
+</html>
