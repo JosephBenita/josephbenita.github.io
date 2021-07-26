@@ -22,6 +22,31 @@ body { margin: 0; padding: 0; }
         center: [-12.5, 5], // starting position
         zoom: 9 // starting zoom
         });
+
+         
+        map.on('load', function () {
+        map.addSource('mapbox-terrain', {
+        type: 'vector',
+        // Use any Mapbox-hosted tileset using its tileset id.
+        // Learn more about where to find a tileset id:
+        // https://docs.mapbox.com/help/glossary/tileset-id/
+        url: 'josephbenita.b6lp0kry'
+        });
+        map.addLayer({
+        'id': 'terrain-data',
+        'type': 'line',
+        'source': 'mapbox-terrain',
+        'source-layer': 'contour',
+        'layout': {
+        'line-join': 'round',
+        'line-cap': 'round'
+        },
+        'paint': {
+        'line-color': '#ff69b4',
+        'line-width': 1
+        }
+        });
+        });
      
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());
