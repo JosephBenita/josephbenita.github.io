@@ -23,30 +23,6 @@ body { margin: 0; padding: 0; }
         zoom: 9 // starting zoom
         });
      
-        map.on('load', function () {
-        // Add an image to use as a custom marker
-        map.loadImage(
-        'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
-        function (error, image) {
-        if (error) throw error;
-        map.addImage('custom-marker', image);
-        // Add a GeoJSON source with 2 points
-        map.addSource('points', {
-        'type': 'geojson',
-        'data': {
-        'type': 'FeatureCollection',
-        'features': [
-        {
-        // feature for Mapbox DC
-        'type': 'Feature',
-        'geometry': {
-        'type': 'Point',
-        'coordinates': [46.219, 6.147]},
-        'properties': {
-        'title': 'Lets take initiative'
-        });
-        }}}}})
-
         {
         map.on('load', function () {
         map.addSource('mapbox-terrain', {
@@ -71,7 +47,6 @@ body { margin: 0; padding: 0; }
         }
         });
         });
-        }
      
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());
