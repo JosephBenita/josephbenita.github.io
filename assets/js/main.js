@@ -258,7 +258,8 @@
 				});
 
 			});
-	
+})(jQuery);
+
 	// Get the modal
 		var modal = document.getElementById("myModal");
 
@@ -279,5 +280,3 @@
 		span.onclick = function() {
   			modal.style.display = "none";
 		},
-
-})(jQuery);
