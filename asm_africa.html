@@ -78,15 +78,30 @@ section:last-child {
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
-        bearing: -0,
-        center: [18.62, 7.69],
-        zoom: 3,
-        speed: 0.8,
-        pitch: 0
-});
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
+            bearing: -0,
+            center: [18.62, 7.69],
+            zoom: 3,
+            speed: 0.8,
+            pitch: 0
+    });
+
+    map.on('load', ()=>{
+            map.addLayer({
+                'id': 'Bamako_Sotrama-76e4ao',
+                'type':'line',
+                'url':'josephbenita.6nkctjgq',
+                'source':'Bamako_Sotrama-76e4ao',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'source-layer':'coutour'
+            });
+        }) 
+
+
 var chapters = {
     'welcome': {
         bearing: -0,
