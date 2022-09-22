@@ -57,24 +57,23 @@ section:last-child {
     </section>
     <section id='section3'>
         <h3>Pays 3</h3>
-        <p>Texte pays 4></p>
+        <p>Texte pays 3</p>
     </section>
     <section id='section4'>
-        <h3>Pays 5</h3>
-        <p>Texte pays 5
-        </p>
+        <h3>Pays 4</h3>
+        <p>Texte pays 4</p>
     </section>
     <section id='section5'>
+        <h3>Pays 5</h3>
+        <p>Texte pays 5</p>
+    </section>
+    <section id='section6'>
         <h3>Pays 6</h3>
         <p>Texte pays 6</p>
     </section>
-    <section id='section6'>
+    <section id='section7'>
         <h3>Pays 7</h3>
         <p>Texte pays 7</p>
-    </section>
-    <section id='section7'>
-        <h3>Pays 8</h3>
-        <p>Texte pays 8</p>
     </section>
 </div>
 <script>
@@ -84,7 +83,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
         bearing: -0,
         center: [18.62, 7.69],
-        zoom: 2,
+        zoom: 3,
         speed: 0.8,
         pitch: 0
 });
@@ -100,7 +99,18 @@ var chapters = {
         bearing: 0,
         center: [2.30, 46.04],
         zoom: 5.00,
-        pitch: 0
+        pitch: 0,
+        map.on('load', ()=>{
+            map.addLayer({
+                id:
+                type:
+                source {
+                    type:
+                    url:''
+                },
+                'source-layer':'coutour'
+            });
+        }); 
     },
     'section2': {
         center: [23.45, -3.02],
