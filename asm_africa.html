@@ -4,8 +4,8 @@
     <meta charset='utf-8' />
     <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -77,13 +77,13 @@ section:last-child {
     </section>
 </div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNsMTZqcTJrbDBnbGkzYnMxbjRpbmt2a2oifQ.LjEpXXA1QSvlsvm-BFGCMA';
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
             bearing: -0,
-            center: [18.62, 7.69],
-            zoom: 3,
+            center: [2.30, 46.04],
+            zoom: 5,
             speed: 0.8,
             pitch: 0
     });
@@ -112,17 +112,17 @@ var chapters = {
     },
     'section1': {
         bearing: 0,
-        center: [2.30, 46.04],
-        zoom: 5.00,
+        center: [-8, 12.63],
+        zoom: 10.00,
         pitch: 0,
 
     },
     'section2': {
-        center: [23.45, -3.02],
+        center: [-7.9, 12.63],
         bearing: 0,
         zoom: 4,
         speed: 0.6,
-        pitch: 44.50
+        pitch: 44.50,
     },
     'section3': {
         bearing: 12.80,
