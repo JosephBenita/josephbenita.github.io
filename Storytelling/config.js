@@ -22,13 +22,13 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'afrique-continent-WB',
-                    opacity: .45
+                    layer: 'afrique-continent-wb',
+                    opacity: .2
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'afrique-continent-WB',
+                    layer: 'afrique-continent-wb',
                     opacity: 0
                 }
             ]
