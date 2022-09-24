@@ -58,7 +58,11 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'country-boundaries_all',
-                    opacity: .4
+                    opacity: .5
+                },
+                {
+                    layer: 'country-label',
+                    opacity: .5
                 }
 
             ],
