@@ -87,7 +87,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'country-boundaries_mli',
-                    opacity: 1
+                    opacity: 0.8
                 }
             ],
             onChapterExit: [
@@ -98,76 +98,76 @@ var config = {
             ]
         },
         {
-            id: 'indego',
+            id: 'nigeria_intro',
             alignment: 'right',
-            title: 'Indego Bike Share',
+            title: 'Nigeria',
             image: '',
-            description: 'Indego has been operating in Philadelphia since 20XX. The system initally was focused on Center City, but has expanded service to neighboring areas to support equitable mobility options to the city\'s residents.',
+            description: '...',
             location: {
-                center: [-75.16468, 39.94503],
-                zoom: 13.15,
-                pitch: 60.00,
-                bearing: -16.80
+                center: [14.30, 10.10],
+                zoom: 5.27,
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
-                    layer: 'indego-stations',
+                    layer: 'country-boundaries_nga',
                     opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'indego-stations',
+                    layer: 'country-boundaries_nga',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'belmont',
+            id: 'cmr_intro',
             alignment: 'right',
-            title: 'Belmont Plateau Trails',
+            title: 'Cameroon',
             image: '',
-            description: 'A short ride along the Schuylkill River Trail from the Art Museum, Belmont is a twisty, log-ridden rollercoaster of a trail network. It is easy to get turned around, the underbrush is at times impenetrable, and short steep sections come out of nowhere. In other words, it\'s really fun',
+            description: '...',
             location: {
-                center: [-75.20325, 39.99574],
-                zoom: 14.99,
-                pitch: 44.00,
-                bearing: -40.00
+                center: [19.2, 7.3],
+                zoom: 5.27,
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
-                    layer: 'belmont',
-                    opacity: 1
+                    layer: 'country-boundaries_cmr',
+                    opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'belmont',
+                    layer: 'country-boundaries_cmr',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'wiss',
+            id: 'eth_intro',
             alignment: 'right',
-            title: 'Wissahickon Park Trails',
+            title: 'Ethiopia',
             image: '',
-            description: 'This steep, rocky gorge can be surprisingly technical. Follow the orange and yellow trails to repeatedly climb and descend through the schist hillsides (careful of the cliffs), or stick to the gravel Forbidden Drive for a relaxing ride along the creek. You\'ll forget you\'re in a city.',
+            description: '...',
             location: {
-                center: [-75.21223, 40.05028],
-                zoom: 13.08,
-                pitch: 47.50,
-                bearing: 32.80
+                center: [46.03, 9.43],
+                zoom: 5.27,
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
-                    layer: 'wissahickon',
+                    layer: 'country-boundaries_eth',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'wissahickon',
+                    layer: 'country-boundaries_eth',
                     opacity: 0
                 }
             ]
