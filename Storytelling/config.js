@@ -59,12 +59,7 @@ var config = {
                 {
                     layer: 'country-boundaries_all',
                     opacity: .5
-                },
-                {
-                    layer: 'country-label',
-                    opacity: .5
                 }
-
             ],
             onChapterExit: [
                 {
