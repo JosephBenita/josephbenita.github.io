@@ -20,10 +20,23 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
+        },
+        {
+            id: 'phl2',
+            alignment: 'right',
+            title: '1',
+            image: '',
+            description: 'intro',
+            location: {
+                center: [39, 13],
+                zoom: 2,
+                pitch: 0.00,
+                bearing: 0.00
+            },
             onChapterEnter: [
                 {
                     layer: 'afrique-continent-wb',
-                    opacity: .2
+                    opacity: .4
                 }
             ],
             onChapterExit: [
