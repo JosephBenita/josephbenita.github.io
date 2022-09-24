@@ -175,13 +175,13 @@ var config = {
         {
             id: 'pennypack',
             alignment: 'right',
-            title: 'Pennypack Park Trails',
+            title: 'Key staff distribution',
             description: '...',
             location: {
-                center: [-75.05685, 40.06839],
-                zoom: 13.73,
-                pitch: 43.50,
-                bearing: 96.80
+                center: [32.39, 21.59],
+                zoom: 3.27,
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
