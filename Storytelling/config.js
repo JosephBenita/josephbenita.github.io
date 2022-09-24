@@ -11,8 +11,8 @@ var config = {
         {
             id: 'intro1',
             alignment: 'right',
-            title: '1',
-            image: '',
+            title: 'Africa desk presentation',
+            image: 'images/form_logo.png',
             description: 'intro',
             location: {
                 center: [39, 13],
@@ -24,7 +24,7 @@ var config = {
         {
             id: 'intro2',
             alignment: 'right',
-            title: '1',
+            title: 'Global strategy',
             image: '',
             description: 'intro',
             location: {
@@ -46,7 +46,7 @@ var config = {
         {
             id: 'intro3',
             alignment: 'right',
-            title: '1',
+            title: 'Current mission',
             image: '',
             description: 'intro',
             location: {
