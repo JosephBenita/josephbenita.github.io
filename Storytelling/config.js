@@ -11,24 +11,24 @@ var config = {
         {
             id: 'phl',
             alignment: 'right',
-            title: 'Afrique global',
+            title: '1',
             image: '',
             description: 'intro',
             location: {
-                center: [-75.13080, 39.97790],
-                zoom: 9.83,
+                center: [39, 13],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'phl-city-limits',
+                    layer: 'afrique-continent-WB',
                     opacity: .45
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'phl-city-limits',
+                    layer: 'afrique-continent-WB',
                     opacity: 0
                 }
             ]
@@ -36,12 +36,12 @@ var config = {
         {
             id: 'bike-lanes',
             alignment: 'right',
-            title: 'Bike Lanes',
+            title: '2',
             image: '',
-            description: 'Philadelphia has XX miles of bike lanes, XX miles of which are protected. Drivers are getting more used to sharing the road, but ride defensively.',
+            description: 'note 2',
             location: {
-                center: [-75.13901, 39.97085],
-                zoom: 11.62,
+                center: [39, 13],
+                zoom: 3,
                 pitch: 55.50,
                 bearing: -7.20
             },
