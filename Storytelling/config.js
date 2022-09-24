@@ -9,7 +9,7 @@ var config = {
     footer: '',
     chapters: [
         {
-            id: 'phl',
+            id: 'intro1',
             alignment: 'right',
             title: '1',
             image: '',
@@ -22,7 +22,7 @@ var config = {
             },
         },
         {
-            id: 'phl2',
+            id: 'intro2',
             alignment: 'right',
             title: '1',
             image: '',
@@ -40,31 +40,63 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {}
+            ]
+        },
+        {
+            id: 'intro3',
+            alignment: 'right',
+            title: '1',
+            image: '',
+            description: 'intro',
+            location: {
+                center: [39, 13],
+                zoom: 2,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'country-boundaries_all',
+                    opacity: .4
+                }
+
+            ],
+            onChapterExit: [
                 {
                     layer: 'afrique-continent-wb',
                     opacity: 0
+                },
+                {
+                    layer: 'country-boundaries_all',
+                    opacity: .0
                 }
             ]
         },
         {
-            id: 'bike-lanes',
+            id: 'mali_intro',
             alignment: 'right',
-            title: '2',
+            title: 'Mali',
             image: '',
-            description: 'note 2',
+            description: 'Financement ECHO...',
             location: {
-                center: [39, 13],
-                zoom: 3,
-                pitch: 55.50,
-                bearing: -7.20
+                center: [4.33, 17.11],
+                zoom: 4.70,
+                pitch: 0,
+                bearing: 0
             },
             onChapterEnter: [
                 {
-                    layer: 'phl-bike-network',
+                    layer: 'country-boundaries_mli',
                     opacity: 1
                 }
             ],
-            onChapterExit: []
+            onChapterExit: [
+                {
+                    layer: 'country-boundaries_mli',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'indego',
