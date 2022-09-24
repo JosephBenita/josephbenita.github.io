@@ -25,7 +25,7 @@ var config = {
             id: 'intro2',
             alignment: 'right',
             title: 'Global strategy',
-            image: '',
+            image: 'images/image1.png',
             description: 'intro',
             location: {
                 center: [39, 13],
