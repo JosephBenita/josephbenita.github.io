@@ -46,7 +46,7 @@ var config = {
         {
             id: 'intro3',
             alignment: 'right',
-            title: 'Current mission',
+            title: 'Current missions',
             image: '',
             description: 'intro',
             location: {
@@ -162,7 +162,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'country-boundaries_eth',
-                    opacity: 1
+                    opacity: 0.8
                 }
             ],
             onChapterExit: [
@@ -176,8 +176,7 @@ var config = {
             id: 'pennypack',
             alignment: 'right',
             title: 'Pennypack Park Trails',
-            image: '',
-            description: 'Pennypack is a great introduction trail system. Not too steep and not too technical, the beautiful wooded park also provides a great escape from urban life. The south side trails are originally bridle trails, so be nice to equestrians and dismount when you approach them.',
+            description: '...',
             location: {
                 center: [-75.05685, 40.06839],
                 zoom: 13.73,
