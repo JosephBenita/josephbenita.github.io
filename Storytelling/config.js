@@ -12,7 +12,7 @@ var config = {
             id: 'intro1',
             alignment: 'right',
             title: 'Africa desk presentation',
-            image: 'storytelling/form_logo.png',
+            image: 'Storytelling\images\Image1.png',
             description: 'intro',
             location: {
                 center: [39, 13],
@@ -178,7 +178,7 @@ var config = {
             title: 'Key staff distribution',
             description: '...',
             location: {
-                center: [32.39, 21.59],
+                center: [32.9, 25.8],
                 zoom: 3.27,
                 pitch: 0,
                 bearing: 0
