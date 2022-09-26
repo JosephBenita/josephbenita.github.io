@@ -12,7 +12,7 @@ var config = {
             id: 'intro1',
             alignment: 'right',
             title: 'Africa desk presentation',
-            image: 'images/Image1.png',
+            image: 'images/form_logo.png',
             description: 'intro',
             location: {
                 center: [39, 13],
