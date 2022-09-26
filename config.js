@@ -124,7 +124,7 @@ var config = {
             alignment: 'right',
             title: 'Mali',
             image: '',
-            description: '<left><span class="image main"><img src="images/acces/Nat.png" alt=""  style="width:500px;height:425px;" /></span></left>',
+            description: '<left><span class="image main"><img src="images/asm_ad/Jonathan.png" alt=""  style="width:75px;height:124px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Joseph.png" alt=""  style="width:111px;height:124px;" /></span></left>',
             location: {
                 center: [4.33, 17.11],
                 zoom: 4.70,
@@ -165,7 +165,7 @@ var config = {
             alignment: 'right',
             title: 'Nigeria',
             image: '',
-            description: '...',
+            description: '<left><span class="image main"><img src="images/asm_ad/Arie.png" alt=""  style="width:86px;height:123px;" /></span></left>',
             location: {
                 center: [14.30, 10.10],
                 zoom: 5.27,
@@ -215,7 +215,7 @@ var config = {
             alignment: 'right',
             title: 'Ethiopia',
             image: '',
-            description: '...',
+            description: '<left><span class="image main"><img src="images/asm_ad/Janet.png" alt=""  style="width:100px;height:124px;" /></span></left>',
             location: {
                 center: [46.03, 9.43],
                 zoom: 5.27,
