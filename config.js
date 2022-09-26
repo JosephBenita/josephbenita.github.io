@@ -22,6 +22,26 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
+            onChapterEnter: [
+                {
+                    layer: 'ne-10m-time-zones',
+                    opacity: 1
+                },
+                {
+                    layer: 'ne-10m-time-zones-2',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ne-10m-time-zones',
+                    opacity: 0
+                },
+                {
+                    layer: 'ne-10m-time-zones-2',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'intro2',
@@ -54,7 +74,7 @@ var config = {
             alignment: 'right',
             title: 'Current missions',
             image: '',
-            description: '<iframe title="CMR_MSNA_Région du Centre_v1" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=f7500302-ed84-449a-a4b1-c704be6fc610&autoAuth=true&ctid=f6f70f1b-2a2d-4f30-852a-64b8ce0c19d7" frameborder="0" allowFullScreen="true"></iframe>',
+            description: '<iframe title="CMR_MSNA_Région du Centre_v1" width="570" height="270.5" src="https://app.powerbi.com/reportEmbed?reportId=f7500302-ed84-449a-a4b1-c704be6fc610&autoAuth=true&ctid=f6f70f1b-2a2d-4f30-852a-64b8ce0c19d7" frameborder="0" allowFullScreen="true"></iframe>',
             location: {
                 center: [53.72, 3.17],
                 zoom: 2.93,
@@ -215,7 +235,11 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: 'key-staff-label',
+                    layer: 'key-staff-label-joseph',
+                    opacity: 1
+                },
+                {
+                    layer: 'key-staff-label-jonathan',
                     opacity: 1
                 }
             ],
@@ -225,7 +249,11 @@ var config = {
                     opacity: 0
                 },
                 {
-                    layer: 'key-staff-label',
+                    layer: 'key-staff-label-joseph',
+                    opacity: 0
+                },
+                {
+                    layer: 'key-staff-label-jonathan',
                     opacity: 0
                 }
             ]
