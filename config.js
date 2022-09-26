@@ -75,7 +75,7 @@ var config = {
                 },
                 {
                     layer: 'country-boundaries_all-line',
-                    opacity: .5
+                    opacity: .0
                 }
             ]
         },
@@ -95,11 +95,27 @@ var config = {
                 {
                     layer: 'country-boundaries_mli',
                     opacity: 0.8
+                },
+                {
+                    layer: 'mali-poi',
+                    opacity: 0.8
+                },
+                {
+                    layer: 'mali-poi-label',
+                    opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'country-boundaries_mli',
+                    opacity: 0
+                },
+                {
+                    layer: 'mali-poi',
+                    opacity: 0
+                },
+                {
+                    layer: 'mali-poi-label',
                     opacity: 0
                 }
             ]
