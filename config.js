@@ -241,7 +241,7 @@ var config = {
             title: 'Key staff distribution',
             description: '...',
             location: {
-                center: [32.9, 25.8],
+                center: [48.58, 23.14],
                 zoom: 3.27,
                 pitch: 0,
                 bearing: 0
@@ -258,6 +258,14 @@ var config = {
                 {
                     layer: 'key-staff-label-jonathan',
                     opacity: 1
+                },
+                {
+                    layer: 'key-staff-label-arie',
+                    opacity: 1
+                },
+                {
+                    layer: 'key-staff-label-janet',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -271,6 +279,14 @@ var config = {
                 },
                 {
                     layer: 'key-staff-label-jonathan',
+                    opacity: 0
+                },
+                {
+                    layer: 'key-staff-label-arie',
+                    opacity: 0
+                },
+                {
+                    layer: 'key-staff-label-janet',
                     opacity: 0
                 }
             ]
