@@ -62,12 +62,20 @@ var config = {
                 {
                     layer: 'country-boundaries_all',
                     opacity: .5
+                },
+                {
+                    layer: 'country-boundaries_all_line',
+                    opacity: .5
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'country-boundaries_all',
                     opacity: .0
+                },
+                {
+                    layer: 'country-boundaries_all-line',
+                    opacity: .5
                 }
             ]
         },
