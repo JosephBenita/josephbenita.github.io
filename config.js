@@ -59,7 +59,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'afrique-continent-wb',
-                    opacity: .4
+                    opacity: .7
                 }
             ],
             onChapterExit: [
@@ -95,6 +95,31 @@ var config = {
             ]
         },
         {
+            id: 'intro4',
+            alignment: 'right',
+            title: 'Missions closed',
+            image: '',
+            description: '',
+            location: {
+                center: [53.72, 3.17],
+                zoom: 2.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .5
+                }
+            ],
+            onChapterExit: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .0
+                }
+            ]
+        },
+        {
             id: 'mali_intro',
             alignment: 'right',
             title: 'Mali',
@@ -109,7 +134,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'country-boundaries_mli',
-                    opacity: 0.8
+                    opacity: 0.5
                 },
                 {
                     layer: 'mali-poi',
