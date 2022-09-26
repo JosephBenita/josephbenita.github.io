@@ -6,8 +6,8 @@ var config = {
     title: 'ASM - Africa desk presentation',
     subtitle: 'October 2022',
     byline: '',
-    description: 'whatever...',
-    footer: 'iMMAP - Sarah Simon - ssimon@immap.org',
+    description: '',
+    footer: 'iMMAP - Sarah Simon - <a href="mailto:ssimon@immap.org">ssimon@immap.org</a>',
     chapters: [
         {
             id: 'intro1',
@@ -17,8 +17,8 @@ var config = {
             imageCredit:'iMMAP',
             description: '<p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p>',
             location: {
-                center: [39, 13],
-                zoom: 2,
+                center: [53.72, 3.17],
+                zoom: 2.93,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -27,12 +27,12 @@ var config = {
             id: 'intro2',
             alignment: 'right',
             title: 'Current strategy',
-            image: 'images/image1.png',
+            image: '',
             imageCredit:'Joseph Benita',
-            description: 'intro',
+            description: '<iframe width="560" height="315" src="https://www.youtube.com/embed/le-e37ZMck8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             location: {
-                center: [39, 13],
-                zoom: 2,
+                center: [53.72, 3.17],
+                zoom: 2.93,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -56,8 +56,8 @@ var config = {
             image: '',
             description: 'intro',
             location: {
-                center: [39, 13],
-                zoom: 2,
+                center: [53.72, 3.17],
+                zoom: 2.93,
                 pitch: 0.00,
                 bearing: 0.00
             },
