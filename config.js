@@ -95,36 +95,11 @@ var config = {
             ]
         },
         {
-            id: 'intro4',
-            alignment: 'right',
-            title: 'Missions closed',
-            image: '',
-            description: '',
-            location: {
-                center: [53.72, 3.17],
-                zoom: 2.93,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            onChapterEnter: [
-                {
-                layer: 'country-boundaries_closed',
-                opacity: .5
-                }
-            ],
-            onChapterExit: [
-                {
-                layer: 'country-boundaries_closed',
-                opacity: .0
-                }
-            ]
-        },
-        {
             id: 'mali_intro',
             alignment: 'right',
             title: 'Mali',
             image: '',
-            description: '<left><span class="image main"><img src="images/asm_ad/Jonathan.png" alt=""  style="width:75px;height:124px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Joseph.png" alt=""  style="width:111px;height:124px;" /></span></left>',
+            description: '<left><span class="image main"><img src="images/asm_ad/Jonathan.png" alt=""  style="width:100px;height:100px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Joseph.png" alt=""  style="width:100px;height:100px;" /></span></left><p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p>',
             location: {
                 center: [4.33, 17.11],
                 zoom: 4.70,
@@ -165,7 +140,7 @@ var config = {
             alignment: 'right',
             title: 'Nigeria',
             image: '',
-            description: '<left><span class="image main"><img src="images/asm_ad/Arie.png" alt=""  style="width:86px;height:123px;" /></span></left>',
+            description: '<left><span class="image main"><img src="images/asm_ad/Arie.png" alt=""  style="width:100px;height:100px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Hany.png" alt=""  style="width:100px;height:100px;" /></span></left><p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p>',
             location: {
                 center: [14.30, 10.10],
                 zoom: 5.27,
@@ -215,7 +190,7 @@ var config = {
             alignment: 'right',
             title: 'Ethiopia',
             image: '',
-            description: '<left><span class="image main"><img src="images/asm_ad/Janet.png" alt=""  style="width:100px;height:124px;" /></span></left>',
+            description: '<left><span class="image main"><img src="images/asm_ad/Janet.png" alt=""  style="width:100px;height:100px;" /></span></left><left><span class="image main"><img src="images/asm_ad/David.png" alt=""  style="width:100px;height:100px;" /> </span></left><p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><left><span class="image main"><img src="images/asm_ad/image1.png" alt=""  style="width:843px;height:493.5px;" /></span></left>',
             location: {
                 center: [46.03, 9.43],
                 zoom: 5.27,
@@ -236,7 +211,82 @@ var config = {
             ]
         },
         {
-            id: 'keystaff',
+            id: 'intro4',
+            alignment: 'right',
+            title: 'Missions closed',
+            image: '',
+            description: '',
+            location: {
+                center: [53.72, 3.17],
+                zoom: 2.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .5
+                }
+            ],
+            onChapterExit: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .0
+                }
+            ]
+        },
+        {
+            id: 'bfa',
+            alignment: 'right',
+            title: 'Burkina Faso',
+            image: '',
+            description: '',
+            location: {
+                center: [2.01, 12.44],
+                zoom: 6.42,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .5
+                }
+            ],
+            onChapterExit: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .0
+                }
+            ]
+        },
+        {
+            id: 'mz',
+            alignment: 'right',
+            title: 'Mozambique',
+            image: '',
+            description: '',
+            location: {
+                center: [39.46, -12.94],
+                zoom: 5.99,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .5
+                }
+            ],
+            onChapterExit: [
+                {
+                layer: 'country-boundaries_closed',
+                opacity: .0
+                }
+            ]
+        },
+        {
+            id: 'staff',
             alignment: 'right',
             title: 'Key staff distribution',
             description: '...',
@@ -250,43 +300,11 @@ var config = {
                 {
                     layer: 'key-staff',
                     opacity: 1
-                },
-                {
-                    layer: 'key-staff-label-joseph',
-                    opacity: 1
-                },
-                {
-                    layer: 'key-staff-label-jonathan',
-                    opacity: 1
-                },
-                {
-                    layer: 'key-staff-label-arie',
-                    opacity: 1
-                },
-                {
-                    layer: 'key-staff-label-janet',
-                    opacity: 1
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'key-staff',
-                    opacity: 0
-                },
-                {
-                    layer: 'key-staff-label-joseph',
-                    opacity: 0
-                },
-                {
-                    layer: 'key-staff-label-jonathan',
-                    opacity: 0
-                },
-                {
-                    layer: 'key-staff-label-arie',
-                    opacity: 0
-                },
-                {
-                    layer: 'key-staff-label-janet',
                     opacity: 0
                 }
             ]
