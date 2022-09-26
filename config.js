@@ -25,11 +25,11 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'ne-10m-time-zones',
-                    opacity: 1
+                    opacity: 0.6
                 },
                 {
                     layer: 'ne-10m-time-zones-2',
-                    opacity: 1
+                    opacity: 0.6
                 }
             ],
             onChapterExit: [
@@ -85,19 +85,11 @@ var config = {
                 {
                     layer: 'country-boundaries_all',
                     opacity: .5
-                },
-                {
-                    layer: 'country-boundaries_all_line',
-                    opacity: .5
                 }
             ],
             onChapterExit: [
                 {
                     layer: 'country-boundaries_all',
-                    opacity: .0
-                },
-                {
-                    layer: 'country-boundaries_all-line',
                     opacity: .0
                 }
             ]
