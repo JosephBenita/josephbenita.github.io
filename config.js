@@ -5,6 +5,7 @@ var config = {
     theme: 'light',
     title: 'ASM - Africa desk presentation',
     subtitle: 'October 2022',
+    use3dTerrain: true,
     byline: '',
     description: '',
     footer: 'iMMAP - Sarah Simon - <a href="mailto:ssimon@immap.org">ssimon@immap.org</a>',
@@ -19,7 +20,7 @@ var config = {
             location: {
                 center: [53.72, 3.17],
                 zoom: 2.93,
-                pitch: 0.00,
+                pitch: 0,
                 bearing: 0.00
             },
             onChapterEnter: [
@@ -48,7 +49,7 @@ var config = {
             alignment: 'right',
             title: 'Current strategy',
             image: '',
-            imageCredit:'Joseph Benita',
+            imageCredit:'',
             description: '<iframe width="560" height="315" src="https://www.youtube.com/embed/le-e37ZMck8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             location: {
                 center: [53.72, 3.17],
@@ -68,6 +69,34 @@ var config = {
                     opacity: 0
                 }
             ]
+        },
+        {
+            id: 'hidden1',
+            hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [-3.67, 14.37],
+                zoom: 10.18,
+                pitch: 70.00,
+                bearing: 0.00
+            },
+        },
+        {
+            id: 'hidden2',
+            hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [-2.54, 14.98],
+                zoom: 10.18,
+                pitch: 70.00,
+                bearing: -99.67
+            },
         },
         {
             id: 'intro3',
@@ -165,7 +194,7 @@ var config = {
             alignment: 'right',
             title: 'Cameroon',
             image: '',
-            description: '...',
+            description: '<left><span class="image main"><img src="images/asm_ad/Walter.png" alt=""  style="width:100px;height:100px;" /></span></left>',
             location: {
                 center: [19.2, 7.3],
                 zoom: 5.27,
@@ -263,7 +292,7 @@ var config = {
         {
             id: 'mz',
             alignment: 'right',
-            title: 'Mozambique',
+            title: 'Malawi',
             image: '',
             description: '',
             location: {
