@@ -327,37 +327,21 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'key-staff',
+                    layer: 'key-staff-label',
+                    opacity: 1
+                },
+                {
+                    layer: 'key-staff-poi',
                     opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'key-staff',
+                    layer: 'key-staff-label',
                     opacity: 0
-                }
-            ]
-        },
-        {
-            id: 'sahel',
-            alignment: 'right',
-            title: 'Sahel',
-            description: '...',
-            location: {
-                center: [7.27, 18.09],
-                zoom: 4.55,
-                pitch: 40,
-                bearing: 0
-            },
-            onChapterEnter: [
+                },
                 {
-                    layer: 'pop-sahel-hexa',
-                    opacity: 0.6
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'pop-sahel-hexa',
+                    layer: 'key-staff-poi',
                     opacity: 0
                 }
             ]
