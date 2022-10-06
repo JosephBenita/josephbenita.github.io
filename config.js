@@ -317,10 +317,10 @@ var config = {
         {
             id: 'staff',
             alignment: 'right',
-            title: 'Key staff distribution',
+            title: 'Current key staff distribution',
             description: '...',
             location: {
-                center: [48.58, 23.14],
+                center: [28.58, 27.14],
                 zoom: 3.27,
                 pitch: 0,
                 bearing: 0
@@ -334,6 +334,30 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'key-staff',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'sahel',
+            alignment: 'right',
+            title: 'Sahel',
+            description: '...',
+            location: {
+                center: [7.27, 18.09],
+                zoom: 4.55,
+                pitch: 40,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'pop-sahel-hexa',
+                    opacity: 0.6
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'pop-sahel-hexa',
                     opacity: 0
                 }
             ]
