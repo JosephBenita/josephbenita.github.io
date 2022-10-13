@@ -78,24 +78,10 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [-3.67, 14.37],
+                center: [53.72, 3.17],
                 zoom: 10.18,
-                pitch: 70.00,
+                pitch: 0.00,
                 bearing: 0.00
-            },
-        },
-        {
-            id: 'hidden2',
-            hidden:'true',
-            alignment: 'right',
-            title: '',
-            image: '',
-            description: '',
-            location: {
-                center: [-2.54, 14.98],
-                zoom: 10.18,
-                pitch: 70.00,
-                bearing: -99.67
             },
         },
         {
