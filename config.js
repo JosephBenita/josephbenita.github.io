@@ -12,11 +12,45 @@ var config = {
     chapters: [
         {
             id: 'intro1',
-            alignment: 'right',
+            alignment: 'full',
             title: 'Global situation',
             image: '',
             imageCredit:'iMMAP',
             description: '<left><span class="image main"><img src="images/asm_ad/Sarah.png" alt=""  style="width:100px;height:100px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Manon.png" alt=""  style="width:100px;height:100px;" /></span></left>  <p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p>',
+            location: {
+                center: [53.72, 3.17],
+                zoom: 2.93,
+                pitch: 0,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'ne-10m-time-zones',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'ne-10m-time-zones-2',
+                    opacity: 0.6
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'ne-10m-time-zones',
+                    opacity: 0
+                },
+                {
+                    layer: 'ne-10m-time-zones-2',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'intro1bis',
+            alignment: 'full',
+            title: 'Global situation',
+            image: '',
+            imageCredit:'iMMAP',
+            description: '<left><span class="image main"><img src="images/asm_ad/Figure_SVG.svg" alt=""  style="width:50%;height:50%;" /></span></left>',
             location: {
                 center: [53.72, 3.17],
                 zoom: 2.93,
