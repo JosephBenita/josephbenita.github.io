@@ -6,9 +6,9 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <link rel="stylesheet" href="index-acces/css/leaflet.css"><link rel="stylesheet" href="index-acces/css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="index-acces/css/qgis2web.css"><link rel="stylesheet" href="index-acces/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="index-acces/css/leaflet-control-geocoder.Geocoder.css">
         <style>
         #map {
             width: 906px;
@@ -20,22 +20,22 @@
     <body>
         <div id="map">
         </div>
-        <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
-        <script src="js/multi-style-layer.js"></script>
-        <script src="js/leaflet.rotatedMarker.js"></script>
-        <script src="js/leaflet.pattern.js"></script>
-        <script src="js/leaflet-hash.js"></script>
-        <script src="js/Autolinker.min.js"></script>
-        <script src="js/rbush.min.js"></script>
-        <script src="js/labelgun.min.js"></script>
-        <script src="js/labels.js"></script>
-        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/mli_admbnda_adm3_1m_dnct_20190802_1.js"></script>
-        <script src="data/mli_admbnda_adm2_1m_dnct_20190802_2.js"></script>
-        <script src="data/mli_admbnda_adm1_1m_dnct_20190802_3.js"></script>
-        <script src="data/mli_admbnda_adm0_1m_dnct_20190802copier_4.js"></script>
-        <script src="data/niger_rivermliner_5.js"></script>
+        <script src="index-acces/js/qgis2web_expressions.js"></script>
+        <script src="index-acces/js/leaflet.js"></script><script src="index-acces/js/L.Control.Locate.min.js"></script>
+        <script src="index-acces/js/multi-style-layer.js"></script>
+        <script src="index-acces/js/leaflet.rotatedMarker.js"></script>
+        <script src="index-acces/js/leaflet.pattern.js"></script>
+        <script src="index-acces/js/leaflet-hash.js"></script>
+        <script src="index-acces/js/Autolinker.min.js"></script>
+        <script src="index-acces/js/rbush.min.js"></script>
+        <script src="index-acces/js/labelgun.min.js"></script>
+        <script src="index-acces/js/labels.js"></script>
+        <script src="index-acces/js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="index-acces/data/mli_admbnda_adm3_1m_dnct_20190802_1.js"></script>
+        <script src="index-acces/data/mli_admbnda_adm2_1m_dnct_20190802_2.js"></script>
+        <script src="index-acces/data/mli_admbnda_adm1_1m_dnct_20190802_3.js"></script>
+        <script src="index-acces/data/mli_admbnda_adm0_1m_dnct_20190802copier_4.js"></script>
+        <script src="index-acces/data/niger_rivermliner_5.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -527,7 +527,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/niger_rivermliner_5.png" /> niger_river-mli-ner': layer_niger_rivermliner_5,'<img src="legend/mli_admbnda_adm0_1m_dnct_20190802copier_4.png" /> mli_admbnda_adm0_1m_dnct_20190802 copier': layer_mli_admbnda_adm0_1m_dnct_20190802copier_4,'<img src="legend/mli_admbnda_adm1_1m_dnct_20190802_3.png" /> mli_admbnda_adm1_1m_dnct_20190802': layer_mli_admbnda_adm1_1m_dnct_20190802_3,'<img src="legend/mli_admbnda_adm2_1m_dnct_20190802_2.png" /> mli_admbnda_adm2_1m_dnct_20190802': layer_mli_admbnda_adm2_1m_dnct_20190802_2,'<img src="legend/mli_admbnda_adm3_1m_dnct_20190802_1.png" /> mli_admbnda_adm3_1m_dnct_20190802': layer_mli_admbnda_adm3_1m_dnct_20190802_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="index-acces/legend/niger_rivermliner_5.png" /> niger_river-mli-ner': layer_niger_rivermliner_5,'<img src="index-acces/legend/mli_admbnda_adm0_1m_dnct_20190802copier_4.png" /> mli_admbnda_adm0_1m_dnct_20190802 copier': layer_mli_admbnda_adm0_1m_dnct_20190802copier_4,'<img src="index-acces/legend/mli_admbnda_adm1_1m_dnct_20190802_3.png" /> mli_admbnda_adm1_1m_dnct_20190802': layer_mli_admbnda_adm1_1m_dnct_20190802_3,'<img src="index-acces/legend/mli_admbnda_adm2_1m_dnct_20190802_2.png" /> mli_admbnda_adm2_1m_dnct_20190802': layer_mli_admbnda_adm2_1m_dnct_20190802_2,'<img src="index-acces/legend/mli_admbnda_adm3_1m_dnct_20190802_1.png" /> mli_admbnda_adm3_1m_dnct_20190802': layer_mli_admbnda_adm3_1m_dnct_20190802_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
         resetLabels([layer_mli_admbnda_adm3_1m_dnct_20190802_1]);
         map.on("zoomend", function(){
