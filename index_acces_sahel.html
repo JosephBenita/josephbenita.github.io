@@ -86,18 +86,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['admin1Pcod'] !== null ? autolinker.link(feature.properties['admin1Pcod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['admin2Pcod'] !== null ? autolinker.link(feature.properties['admin2Pcod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['admin3Pcod'] !== null ? autolinker.link(feature.properties['admin3Pcod'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">admin1Name</th>\
                         <td>' + (feature.properties['admin1Name'] !== null ? autolinker.link(feature.properties['admin1Name'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -107,9 +95,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['admin0Name'] !== null ? autolinker.link(feature.properties['admin0Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['admin0Pcod'] !== null ? autolinker.link(feature.properties['admin0Pcod'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>admin3Name</strong><br />' + (feature.properties['admin3Name'] !== null ? autolinker.link(feature.properties['admin3Name'].toLocaleString()) : '') + '</td>\
