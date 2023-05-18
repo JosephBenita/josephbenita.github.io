@@ -35,7 +35,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'ne-10m-time-zones',
+                    layer: 'sahel-adm2-ch-proj',
                     opacity: 0
                 },
                 {
