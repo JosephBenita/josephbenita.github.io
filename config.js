@@ -12,7 +12,7 @@ var config = {
     chapters: [
         {
             id: 'intro1',
-            alignment: 'full',
+            alignment: 'right',
             title: 'Global situation',
             image: '',
             imageCredit:'iMMAP',
@@ -46,7 +46,7 @@ var config = {
         },
         {
             id: 'intro1bis',
-            alignment: 'full',
+            alignment: 'left',
             title: 'Global situation',
             image: '',
             imageCredit:'iMMAP',
@@ -112,8 +112,8 @@ var config = {
             image: '',
             description: '',
             location: {
-                center: [53.72, 3.17],
-                zoom: 10.18,
+                center: [-3.87036, 14.45513],
+                zoom: 4.57,
                 pitch: 0.00,
                 bearing: 0.00
             },
