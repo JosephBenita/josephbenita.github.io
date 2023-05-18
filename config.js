@@ -25,7 +25,7 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'sahel-adm2-ch-proj',
+                    layer: 'sahel-adm2-ch-cour',
                     opacity: 0.8
                 },
                 {
@@ -35,7 +35,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'sahel-adm2-ch-proj',
+                    layer: 'sahel-adm2-ch-cour',
                     opacity: 0
                 },
                 {
@@ -52,14 +52,14 @@ var config = {
             imageCredit:'iMMAP',
             description: '<left><span class="image main"><img src="images/asm_ad/Figure_SVG.svg" alt=""  style="width:50%;height:50%;" /></span></left>',
             location: {
-                center: [53.72, 3.17],
-                zoom: 2.93,
+                center: [4.53259, 16.49463],
+                zoom: 3.49,
                 pitch: 0,
                 bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'ne-10m-time-zones',
+                    layer: 'sahel-adm2-ch-proj',
                     opacity: 0.6
                 },
                 {
@@ -69,7 +69,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'ne-10m-time-zones',
+                    layer: 'sahel-adm2-ch-proj',
                     opacity: 0
                 },
                 {
