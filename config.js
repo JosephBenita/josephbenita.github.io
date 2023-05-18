@@ -25,8 +25,8 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'ne-10m-time-zones',
-                    opacity: 0.6
+                    layer: 'sahel-adm2-ch-proj',
+                    opacity: 0.8
                 },
                 {
                     layer: 'ne-10m-time-zones-2',
