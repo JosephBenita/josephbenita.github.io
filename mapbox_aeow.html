@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AEOW</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYWxsZXllc29ud2FnbmVyIiwiYSI6ImNsamQ2NXl1ZzAxbzUzcWxzdHp5Z3VwNmoifQ.kATnAwOxkP_Nt3LXj_XzIQ';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/alleyesonwagner/cljiq5st8003b01pq4j726bow', // style URL
+        center: [-0.11773, 28.47070], // starting position [lng, lat]
+        zoom: 2.67 // starting zoom
+    });
+    /* 
+        Add an event listener that runs
+        when a user clicks on the map element.
+    */
+    map.on('click', (event) => {
+        // If the user clicked on one of your markers, get its information.
+        const features = map.queryRenderedFeatures(event.point, {
+         layers: ['aeow-poi'] // replace with your layer name
+        });
+        if (!features.length) {
+            return;
+        }
+        const feature = features[0];
+
+  // Code from the next step will go here.
+  /* 
+    Create a popup, specify its options 
+    and properties, and add it to the map.
+  */
+        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+        `<h3>${feature.properties.group}</h3><p>${feature.properties.description}</p>`
+        )
+        .addTo(map);
+
+    });
+
+    // create legend
+    const legend = document.getElementById('legend');
+
+    layers.forEach((layer, i) => {
+        const color = colors[i];
+        const item = document.createElement('div');
+        const key = document.createElement('span');
+        key.className = 'legend-key';
+        key.style.backgroundColor = color;
+
+        const value = document.createElement('span');
+        value.innerHTML = `${layer}`;
+        item.appendChild(key);
+        item.appendChild(value);
+        legend.appendChild(item);
+    });
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
