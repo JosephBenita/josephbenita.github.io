@@ -29,7 +29,7 @@ body { margin: 0; padding: 0; }
     map.on('click', (event) => {
         // If the user clicked on one of your markers, get its information.
         const features = map.queryRenderedFeatures(event.point, {
-         layers: ['aeow-poi'] // replace with your layer name
+         layers: ['voyages-points-56biaa'] // replace with your layer name
         });
         if (!features.length) {
             return;
