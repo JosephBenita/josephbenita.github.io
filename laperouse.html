@@ -2,7 +2,6 @@
 <html>
 <head>
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"/>
-<link rel="stylesheet" href="assets/css/laperouse.css" />
 <meta charset="utf-8">
 <title>Voyages de Lapérouse</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -25,7 +24,26 @@ body { margin: 0; padding: 0; }
             border: none;
             border-radius: 3px;
             font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
             text-align: center;
+            color: #222;
+            background: none;
+        }
+    </style>
+
+    <style type="text/css">
+        .map-overlay-popup{
+            display: block;
+            position: absolute; /* Position absolue pour le placer au même endroit */
+            top: 100px; /* Définissez la valeur de top en pixels selon votre besoin */
+            left: 100px; /* Définissez la valeur de left en pixels selon votre besoin */
+            width: 500px; /* Définissez la largeur en pixels selon votre besoin */
+            padding: 10px;
+            background:none;
+            border: none;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
             color: #222;
             background: none;
         }
@@ -61,6 +79,7 @@ body { margin: 0; padding: 0; }
         'data': {
             'type': 'FeatureCollection',
             'features': [
+                { "type": "Feature", "properties": {"description":'<strong>Paris</strong> 11 juin 1785. <p>Votre amitié, madame, est essentielle à mon bonheur ; je le croyais à Albi, et j\'osais, dans mes châteaux en Espagne, passer tous les ans deux mois chez vous avec ma femme. Je me flattais de vous recevoir chez moi ; mon amour-propre allait jusqu à l\'espoir de vous rendre le séjour d\'une aussi petite ville supportable. </p>',"id": null, "Nom": "Paris", "icon":"dot-10" }, "geometry": { "type": "Point", "coordinates": [ 2.332959, 48.853772 ] } },    
                 { "type": "Feature", "properties": {"description":'<strong>Ténérife</strong> 20-30 aout 1785',"id": null, "Nom": "Ténérife", "icon":"dot-10" }, "geometry": { "type": "Point", "coordinates": [ -16.243289307155617, 28.459039972417553 ] } },
                 { "type": "Feature", "properties": {"description":'<strong>Brest</strong>, 1er aout 1785',"id": null, "Nom": "Brest", "icon":"border-dot-13"  }, "geometry": { "type": "Point", "coordinates": [ -4.46183930421906, 48.384943957447668 ] } },
                 { "type": "Feature", "properties": {"description":'<strong>Madère</strong> 13 aout 1785', "id": null, "Nom": "Madère", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -16.875801870919837, 32.806704991023118 ] } },
