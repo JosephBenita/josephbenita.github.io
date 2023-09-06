@@ -1,15 +1,3 @@
-/* Style de base pour la popup */
-.map-overlay-popup {
-    position: absolute; /* Position absolue pour le placer au même endroit */
-    top: 100px; /* Définissez la valeur de top en pixels selon votre besoin */
-    left: 100px; /* Définissez la valeur de left en pixels selon votre besoin */
-    width: 200px; /* Définissez la largeur en pixels selon votre besoin */
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    z-index: 1; /* Assurez-vous que la popup est au-dessus de la carte */
-    pointer-events: none; /* Assurez-vous que la popup n'interfère pas avec les interactions de la carte */
-}
 
 /* Style du titre de la popup */
 .map-overlay-popup h3 {
