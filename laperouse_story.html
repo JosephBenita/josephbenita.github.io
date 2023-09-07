@@ -1,342 +1,352 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8' />
-    <title>Lapérouse</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"/>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet"> 
-
-    <style>
-        body {
-            margin:0;
-            padding:0;
-            font-family: 'Asap', sans-serif;
-        }
-        a, a:hover, a:visited {
-            color: #0071bc;
-        }
-        #map {
-            top:0;
-            height: 100vh;
-            width:100%;
-            position: fixed;
-        }
-        #header {
-            margin: auto;
-            width: 100%;
-            opacity: 60%;
-            position: relative;
-            z-index: 5;
-        }
-        #header h1, #header h2, #header h3, #header p {
-            margin: 0;
-            padding: 2vh 2vw;
-            text-align: center;
-        }
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            position: relative;
-            z-index: 5;
-        }
-        #features {
-            padding-top: 10vh;
-            padding-bottom: 10vh;
-        }
-        .hidden {
-            visibility: hidden;
-        }
-        .centered {
-            width: 50vw;
-            margin: 0 auto;
-        }
-        .lefty {
-            width: 33vw;
-            margin-left: 5vw;
-        }
-        .righty {
-            width: 33vw;
-            margin-left: 62vw;
-        }
-        .fully {
-            width: 100%;
-            margin: auto;
-        }
-        .light {
-            color: #444;
-            background-color: #fafafa;
-        }
-        .dark {
-            color: #fafafa;
-            background-color: #444;
-        }
-        .step {
-            padding-bottom: 50vh;
-            /* margin-bottom: 10vh; */
-            opacity: 0.2;
-        }
-        .step.active {
-            opacity: 0.75;
-        }
-
-        .step div {
-            padding:  25px 50px;
-            line-height: 25px;
-            font-size: 13px;
-        }
-
-        .step img {
-            width: 100%;
-        }
-
-        @media (max-width: 750px) {
-            .centered, .lefty, .righty, .fully {
-                width: 90vw;
-                margin: 0 auto;
-            }
-        }
-
-        /* Fix issue on mobile browser where scroll breaks  */
-        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan, 
-        .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
-            touch-action: unset;
-        }
-
-        </style>
+<meta charset="utf-8">
+<title>Lapérouse</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
 </head>
 <body>
+<style>
+    #map {
+        position: fixed;
+        width: 60%;
+    }
+    #features {
+        width: 40%;
+        margin-left: 60%;
+        font-family: sans-serif;
+        overflow-y: scroll;
+        background-color: #fafafa;
+    }
+    section {
+        padding: 25px 50px;
+        line-height: 25px;
+        border-bottom: 1px solid #ddd;
+        opacity: 0.25;
+        font-size: 13px;
+    }
+    section.active {
+        opacity: 1;
+    }
+    section:last-child {
+        border-bottom: none;
+        margin-bottom: 200px;
+    }
+</style>
 
 <div id="map"></div>
-<div id="story"></div>
-<script src="./laperouse_story_config.js"></script>
+<div id="features">
+    <section id="paris" class="active">
+        <h3>Paris</h3>
+        <p>
+            <strong>Juin 1785</strong>, Lapérouse écrit une lettre à la Marquise de St Géry.
+            <p><right><span class="image main"><img src="laperouse/laperouse.jpg" alt=""  style="width:340px;height:389px;" /></span></right></p>
+            <i>Votre amitié, Madame, est essentielle à mon bonheur ; je le croyais à Albi, et j'osais, dans mes châteaux en Espagne, passer tous les ans deux mois chez vous avec ma femme. Je me flattais de vous recevoir chez moi ; mon amour-propre allait jusqu à l'espoir de vous rendre le séjour d'une aussi petite ville supportable.</i> </p>
+        </p>
+    </section>
+    <section id="st-gery">
+        <h3>St Géry</h3>
+        <p>
+            <p>Lapérouse et la marquise se connaissent au moins depuis ... .</p>
+            <p><left><span class="image main"><img src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:331.25px;height:374px;" /></span></left><left></p>
+            <i><p>Combien ma situation est différente aujourd'hui ! <strong>Je pars pour faire le tour du monde.</strong> </p>
+            <p>Si les sacrifices du cœur pouvaient être compensés par d'autres avantages, je n'aurais rien à désirer. Mais un grade de plus, quelque célébrité même, tout cela n'est rien pour le bonheur.</p>
+            <p> Je pars avec des principes que vous m'auriez inspirés si nous avions eu le temps de nous entretenir ensemble de ce voyage. Je ferai tous mes efforts pour que les habitants des Iles que nous pourrons rencontrer, n'aient jamais à se repentir de nous avoir reçus. Votre ami (car j'ose prendre ce titre) ne sera pas vraisemblablement un grand homme, mais il sera bon, modéré, et vous n'aurez en lisant sa relation aucune injustice à excuser. </p>
+            <p>Vous recevrez par le même courrier une médaille qui marque l'époque de mon départ ; je ne sais si à mon retour, j'aurai mérité qu'il en soit frappé une moins modeste. Je crains, en vérité, que ce voyage ne soit beaucoup au-dessous de l'opinion qu'on en a conçue. </p>
+            <p>Ménagez votre santé ; elle est si nécessaire à votre famille et à vos amis ! Si vous avez la bonté de m'adresser encore une lettre à Brest, j'en conserverai la plus vive reconnaissance. </p>
+            <p>Je suis, Madame, avec les sentiments que je vous ai voués pour ma vie, et sans autre compliment, votre Lapérouse. </p>
+            <p>Mille choses, je vous prie, aux demoiselles de Puyol ; leur neveu est un excellent sujet dont la bonne conduite a rendu très faciles les demandes que j'ai faites pour lui. </p>
+            <p>Permettez que Mesdames de St-Géry, trouvent ici les assurances de mon inviolable attachement.</p></i>
+            </p>
+    </section>
+    <section id="brest">
+        <h3>De Brest</h3>
+        <p>
+            Holmes and Watson's investigations take them across London. Sherlock
+            deduces that West was murdered elsewhere, then moved to Aldgate
+            Station to create the illusion that he was crushed on the tracks by
+            a train. On their way to Woolwich Sherlock dispatches a telegram to
+            Mycroft at London Bridge: "Send list of all foreign spies known to
+            be in England, with full address."
+        </p>
+    </section>
+    <section id="madere-tenerife">
+        <h3>Jusqu'au Cap Horn</h3>
+        <p>
+            While investigating at Woolwich Arsenal Sherlock learns that West
+            did not have the three keys&mdash;door, office, and
+            safe&mdash;necessary to steal the papers. The train station clerk
+            mentions seeing an agitated West boarding the 8:15 train to London
+            Bridge. Sherlock suspects West of following someone who had access
+            to the Woolwich chief's keyring with all three keys.
+        </p>
+    </section>
+    <section id="trinidad-ste-catherine">
+        <h3>Trinidad et Ste Catherine</h3>
+        <p>
+            Mycroft responds to Sherlock's telegram and mentions several spies.
+            Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He
+            heads to the nearby Gloucester Road station to investigate and
+            learns that the windows of Caulfield Gardens open over rail tracks
+            where trains stop frequently.
+        </p>
+    </section>
+    <section id="cap-horn">
+        <h3>Cap Horn</h3>
+        <p>
+            Holmes deduces that the murderer placed West atop a stopped train at
+            Caulfield Gardens. The train traveled to Aldgate Station before
+            West's body finally toppled off. Backtracking to the criminal's
+            apartment, Holmes finds a series of classified ads from
+            <em>The Daily Telegraph</em> stashed away. All are under the name
+            Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not
+            be so suspicious. Payment in hard cash when goods delivered."
+        </p>
+    </section>
+    <section id="telegraph">
+        <h3>The Daily Telegraph</h3>
+        <p>
+            Holmes and Watson head to The Daily Telegraph and place an ad to
+            draw out the criminal. It reads: "To-night. Same hour. Same place.
+            Two taps. Most vitally important. Your own safety at stake.
+            Pierrot." The trap works and Holmes catches the criminal: Colonel
+            Valentine Walter, the brother of Woolwich Arsenal's chief. He
+            confesses to working for Hugo Oberstein to obtain the submarine
+            plans in order to pay off his debts.
+        </p>
+    </section>
+    <section id="charing-cross">
+        <h3>Charing Cross Hotel</h3>
+        <p>
+            Walter writes to Oberstein and convinces him to meet in the smoking
+            room of the Charing Cross Hotel where he promises additional plans
+            for the submarine in exchange for money. The plan works and Holmes
+            and Watson catch both criminals.
+        </p>
+        <small id="citation">
+            Adapted from
+            <a href="http://www.gutenberg.org/files/2346/2346-h/2346-h.htm">Project Gutenberg</a>
+        </small>
+    </section>
+</div>
 <script>
-var layerTypes = {
-    'fill': ['fill-opacity'],
-    'line': ['line-opacity'],
-    'circle': ['circle-opacity', 'circle-stroke-opacity'],
-    'symbol': ['icon-opacity', 'text-opacity'],
-    'raster': ['raster-opacity'],
-    'fill-extrusion': ['fill-extrusion-opacity'],
-    'heatmap': ['heatmap-opacity']
-}
-
-var alignments = {
-    'left': 'lefty',
-    'center': 'centered',
-    'right': 'righty',
-    'full': 'fully'
-}
-
-function getLayerPaintType(layer) {
-    var layerType = map.getLayer(layer).type;
-    return layerTypes[layerType];
-}
-
-function setLayerOpacity(layer) {
-    var paintProps = getLayerPaintType(layer.layer);
-    paintProps.forEach(function(prop) {
-        var options = {};
-        if (layer.duration) {
-            var transitionProp = prop + "-transition";
-            options = { "duration": layer.duration };
-            map.setPaintProperty(layer.layer, transitionProp, options);
-        }
-        map.setPaintProperty(layer.layer, prop, layer.opacity, options);
+	mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/josephbenita/clkckmnbo001u01pcesvo1p3h',
+        center: [-3.52801, 46.43095],
+        zoom: 4.24,
+        bearing: 0,
+        pitch: 0
     });
-}
 
-var story = document.getElementById('story');
-var features = document.createElement('div');
-features.setAttribute('id', 'features');
-
-var header = document.createElement('div');
-
-if (config.title) {
-    var titleText = document.createElement('h2');
-    titleText.innerText = config.title;
-    header.appendChild(titleText);
-}
-
-if (config.subtitle) {
-    var subtitleText = document.createElement('h2');
-    subtitleText.innerText = config.subtitle;
-    header.appendChild(subtitleText);
-}
-
-if (config.byline) {
-    var bylineText = document.createElement('p');
-    bylineText.innerText = config.byline;
-    header.appendChild(bylineText);
-}
-
-if (header.innerText.length > 0) {
-    header.classList.add(config.theme);
-    header.setAttribute('id', 'header');
-    story.appendChild(header);
-}
-
-config.chapters.forEach((record, idx) => {
-    var container = document.createElement('div');
-    var chapter = document.createElement('div');
-
-    if (record.title) {
-        var title = document.createElement('h3');
-        title.innerText = record.title;
-        chapter.appendChild(title);
-    }
-
-    if (record.image) {
-        var image = new Image();
-        image.src = record.image;
-        chapter.appendChild(image);
-    }
-
-    if (record.description) {
-        var story = document.createElement('p');
-        story.innerHTML = record.description;
-        chapter.appendChild(story);
-    }
-
-    container.setAttribute('id', record.id);
-    container.classList.add('step');
-    if (idx === 0) {
-        container.classList.add('active');
-    }
-
-    chapter.classList.add(config.theme);
-    container.appendChild(chapter);
-    container.classList.add(alignments[record.alignment] || 'centered');
-    if (record.hidden) {
-        container.classList.add('hidden');
-    }
-    features.appendChild(container);
-});
-
-story.appendChild(features);
-
-var footer = document.createElement('div');
-
-if (config.footer) {
-    var footerText = document.createElement('p');
-    footerText.innerHTML = config.footer;
-    footer.appendChild(footerText);
-}
-
-if (footer.innerText.length > 0) {
-    footer.classList.add(config.theme);
-    footer.setAttribute('id', 'footer');
-    story.appendChild(footer);
-}
-
-mapboxgl.accessToken = config.accessToken;
-
-const transformRequest = (url) => {
-    const hasQuery = url.indexOf("?") !== -1;
-    const suffix = hasQuery ? "&pluginName=scrollytellingV2" : "?pluginName=scrollytellingV2";
-
-    return {
-      url: url + suffix
-    }
-}
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: config.style,
-    center: config.chapters[0].location.center,
-    zoom: config.chapters[0].location.zoom,
-    bearing: config.chapters[0].location.bearing,
-    pitch: config.chapters[0].location.pitch,
-    interactive: false,
-    transformRequest: transformRequest
-});
-
-if (config.showMarkers) {
-    var marker = new mapboxgl.Marker({ color: config.markerColor });
-    marker.setLngLat(config.chapters[0].location.center).addTo(map);
-}
-
-// instantiate the scrollama
-var scroller = scrollama();
-
-map.on("load", function() {
-    if (config.use3dTerrain) {
-        map.addSource('mapbox-dem', {
-            'type': 'raster-dem',
-            'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-            'tileSize': 512,
-            'maxzoom': 14
+    map.on('load', () => {
+        map.addSource('josephbenita-9t2ds669', {
+            'type': 'raster',
+            'url': 'josephbenita.9t2ds669'
         });
-        // add the DEM source as a terrain layer with exaggerated height
-        map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
-
-        // add a sky layer that will show when the map is highly pitched
+ 
         map.addLayer({
-            'id': 'sky',
-            'type': 'sky',
-            'paint': {
-                'sky-type': 'atmosphere',
-                'sky-atmosphere-sun': [0.0, 0.0],
-                'sky-atmosphere-sun-intensity': 15
-            }
+            'id': 'josephbenita-9t2ds669',
+            'source': 'josephbenita-9t2ds669',
+            'type': 'raster'
         });
+    });
+
+    map.on('load', () => {
+              
+        map.addSource('places', {
+// This GeoJSON contains features that include an "icon"
+// property. The value of the "icon" property corresponds
+// to an image in the Mapbox Streets style's sprite.
+'type': 'geojson',
+'data': {
+    'type': 'FeatureCollection',
+    'features': [
+        { "type": "Feature", "properties": {"description":'<strong>Paris</strong> 11 juin 1785. <p>Votre amitié, madame, est essentielle à mon bonheur ; je le croyais à Albi, et j\'osais, dans mes châteaux en Espagne, passer tous les ans deux mois chez vous avec ma femme. Je me flattais de vous recevoir chez moi ; mon amour-propre allait jusqu à l\'espoir de vous rendre le séjour d\'une aussi petite ville supportable. </p>',"id": null, "Nom": "Paris", "icon":"dot-10" }, "geometry": { "type": "Point", "coordinates": [ 2.332959, 48.853772 ] } },    
+        { "type": "Feature", "properties": {"description":'<strong>Ténérife</strong> 20-30 aout 1785',"id": null, "Nom": "Ténérife", "icon":"dot-10" }, "geometry": { "type": "Point", "coordinates": [ -16.243289307155617, 28.459039972417553 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Brest</strong>, 1er aout 1785. <p>Combien ma situation est différente aujourd\'hui ! Je pars pour faire le tour du monde.</p> ',"id": null, "Nom": "Brest", "icon":"border-dot-13"  }, "geometry": { "type": "Point", "coordinates": [ -4.46183930421906, 48.384943957447668 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Madère</strong> 13 aout 1785', "id": null, "Nom": "Madère", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -16.875801870919837, 32.806704991023118 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Ile de Pâques</strong> 10 avril 1786.<p><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_paques.jpg" alt=""  style="width:246px;height:170px;" /></span></center><left><p>', "id": null, "Nom": "Ile de Pâques", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -109.324607991080285, -27.073191000471198 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Latuya bay</strong> juillet-aout aout 1786', "id": null, "Nom": "Latuya bay", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -137.661905444276755, 58.612927112257388 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>St Géry</strong>', "id": null, "Nom": "St Géry", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 1.768624865515617, 43.838108755266489 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Trinidad</strong> 18 octobre 1785', "id": null, "Nom": "Trinidad", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -29.315664641404481, -20.507073635533967 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Ile Ste Catherine</strong> 9 novembre 1785', "id": null, "Nom": "Ile Ste Catherine", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -48.491965230819986, -27.610089719692361 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Conception</strong> 24 février 1786', "id": null, "Nom": "Conception", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -73.147517055591038, -36.829312873864936 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Mauwee</strong> 28-29 mai 1786.<p><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_iles Mowée.jpg" alt=""  style="width:239px;height:167px;" /></span></center><left><p>', "id": null, "Nom": "Mauwee", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -156.28736968603738, 20.561690689317992 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Mont St Elie</strong> fin juin 1786', "id": null, "Nom": "Mont St Elie", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -140.927631152801297, 60.293633496894451 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Baie Yakutat</strong> juillet-aout 1786', "id": null, "Nom": "Baie Yakutat", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -139.931914419824295, 59.656236350216886 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Monterey</strong> mi septembre 1786.<p><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_Californie.jpg" alt=""  style="width:163px;height:212px;" /></span></center><left><p>', "id": null, "Nom": "Monterey", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -121.898353062982665, 36.600447535427278 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Iles Mariannes</strong> 14 décembre 1786', "id": null, "Nom": "Iles Mariannes", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 145.601042059565174, 19.11414004392298 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Macau</strong> janvier-février 1787', "id": null, "Nom": "Macau", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 113.556855994097546, 22.149788764361237 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Manille</strong> mi-février 1787', "id": null, "Nom": "Manille", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 120.986019963626916, 14.597853690843245 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Taiwan</strong> 6 mai 1787', "id": null, "Nom": "Taiwan", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 120.054534572952022, 23.351717702972827 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Ile Jeju</strong> 21 mai 1787', "id": null, "Nom": "Ile Jeju", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 126.520974312485066, 33.512789423525753 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Terney</strong> 25 mai 1787', "id": null, "Nom": "Terney", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 136.626502175089144, 45.045919733504391 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Détroit de Tartarie</strong> 24 juillet 1787', "id": null, "Nom": "Détroit de Tartarie", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 141.589454443342362, 52.130077407619339 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Iles Kouriles</strong>', "id": null, "Nom": "Iles Kouriles", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 152.070795009298479, 47.052410307412003 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Petropavlovsk</strong> septembre 1787', "id": null, "Nom": "Petropavlovsk", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 158.647990633698498, 53.022487140889766 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Samoa</strong> mi-décembre 1787', "id": null, "Nom": "Samoa", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -172.344380477629954, -13.67548853454498 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Tonga</strong> fin décembre 1787', "id": null, "Nom": "Tonga", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -174.646588272468875, -19.960880924868857 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Norfolk</strong> 17 janvier 1788', "id": null, "Nom": "Norfolk", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 167.951484962513035, -29.041466690050481 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Botany bay</strong> février-mars 1788', "id": null, "Nom": "Botany bay", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ 151.185931219732026, -33.988246218112003 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Vanikoro</strong>', "id": null, "Nom": "Vanikoro", "icon":"border-dot-13"  }, "geometry": { "type": "Point", "coordinates": [ 166.98473754866464, -11.615394579780476 ] } },
+        { "type": "Feature", "properties": {"description":'<strong>Cap Horn</strong> janvier 1786', "id": null, "Nom": "Cap Horn", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -67.246512053938886, -55.998416848715138 ] } }
+    ]
+}})
+
+        // Add a layer showing the places.
+        map.addLayer({
+'id': 'places',
+'type': 'symbol',
+'source': 'places',
+'layout': {
+    'icon-image': ['get', 'icon'],
+    'icon-allow-overlap': true
+    }
+});
+
+        map.addSource('route', {
+    'type': 'geojson',
+    'data':{
+        'type': 'FeatureCollection',
+        "features": [
+            { "type": "Feature", "properties": { "fid": 1, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -4.46183930421906, 48.384943957447668 ], [ -4.464674410496621, 48.37195916186306 ], [ -4.653917754523174, 48.318332115054389 ], [ -5.776619840433598, 48.109902002170365 ], [ -7.732843171944142, 45.480162826611156 ], [ -9.660715440679146, 42.701992593835762 ], [ -10.590630299716034, 41.109474192993332 ], [ -11.61126855963454, 39.318686878066849 ], [ -12.042204713822372, 37.78710667136923 ], [ -12.654587669773491, 36.277949846189543 ], [ -13.198928075063359, 35.372880043536732 ], [ -14.242247185202309, 34.738778780928342 ], [ -15.44433224688413, 34.344653242840863 ], [ -15.852587550851544, 33.948649370053175 ], [ -16.05671520283525, 33.474780990029267 ], [ -16.562526792970527, 33.199816672433968 ], [ -16.875801870919844, 32.806704991023111 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 2, "id": 2 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -140.016441621671476, 59.575178254667065 ], [ -139.743811751230055, 59.390270092815371 ], [ -139.45603577687524, 59.289686798768301 ], [ -138.683584477291248, 59.025206775908536 ], [ -138.27463967162916, 58.888276164752199 ], [ -137.880840969880438, 58.624626660616123 ], [ -137.764451838380381, 58.558689827583308 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 3, "id": 4 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 113.642762802266915, 21.776300152064639 ], [ 113.67878804070763, 20.989248507078059 ], [ 114.336532697099514, 20.54126784644178 ], [ 115.198405005475223, 20.091955363209976 ], [ 116.264404965834515, 19.426301241630675 ], [ 117.148958124430663, 18.390172259013017 ], [ 118.14691553412878, 17.934853132559518 ], [ 118.260319785230848, 17.173359929254708 ], [ 118.504662158471945, 16.05670733726636 ], [ 118.656123197606092, 15.183381310716966 ], [ 118.807584236740183, 14.54256419670206 ], [ 119.2165290424023, 14.151251048227795 ], [ 119.754215731328429, 14.055163524159619 ], [ 120.526667030912307, 14.346994141560335 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 4, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 120.526667030912307, 14.346994141560335 ], [ 119.988980341986277, 14.38759845412001 ], [ 119.572462484367449, 14.719533130738569 ], [ 119.19023464426779, 15.794744462718802 ], [ 119.507766547353484, 17.608896065720462 ], [ 119.779936749998441, 18.693045348725068 ], [ 119.48508569713303, 19.856077707575654 ], [ 118.986106992284007, 20.306078281472107 ], [ 118.577851688316542, 21.265892132153944 ], [ 118.464447437214531, 22.177174766660531 ], [ 118.827341040741203, 22.683228237311614 ], [ 119.447507127081721, 23.062999548641088 ], [ 119.606541218172595, 23.101535357728039 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 5, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -16.875801870919844, 32.806704991023111 ], [ -16.606137222866277, 32.804932756223181 ], [ -16.328390030840769, 32.708975749415046 ], [ -15.875268401071986, 32.576802458689805 ], [ -15.330927995782094, 32.018147239906178 ], [ -15.126800343798388, 31.280883700761105 ], [ -15.240204594900424, 30.49848056846179 ], [ -15.398970546443321, 30.085147769769449 ], [ -15.897949251292379, 29.867939923340561 ], [ -16.034034352614832, 29.392373146523024 ], [ -16.105412750250501, 28.606592077175652 ], [ -16.075176663209898, 28.54491045961284 ], [ -16.138067724254366, 28.439688876711553 ], [ -16.243289307155617, 28.459039972417553 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 6, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -109.324607991080299, -27.073191000471205 ], [ -109.241973239678671, -26.36654045507472 ], [ -108.174988373038019, -23.63164534164639 ], [ -108.447158575682948, -21.355651968329656 ], [ -108.991498980972835, -18.52487244128482 ], [ -109.445115985381065, -15.469976082138352 ], [ -109.671924487585159, -14.588276789609898 ], [ -109.717286188025994, -11.922441736560941 ], [ -109.626562787144337, -9.81520677142356 ], [ -110.579158496401661, -8.372499502291834 ], [ -111.123498901691519, -6.198531402889683 ], [ -112.348264813593758, -5.107931983179186 ], [ -113.482307324614354, -3.514207739593742 ], [ -114.389541333430827, -2.510944659021877 ], [ -115.115328540484015, -0.41105486192397 ], [ -114.79779663739825, 1.095898553225051 ], [ -115.251413641806494, 1.871974744443817 ], [ -115.977200848859653, 3.354559523220368 ], [ -116.793711456794469, 4.948616398930845 ], [ -117.111243359880248, 5.857842576922345 ], [ -118.404051822443705, 6.969580610254781 ], [ -120.286562390737899, 8.575627414975081 ], [ -121.692775104403438, 9.882583272789219 ], [ -122.66805166388113, 11.049901257133175 ], [ -123.529923972256796, 11.855327936900528 ], [ -124.550562232175324, 12.747425028992335 ], [ -125.820689844518398, 14.742738957718361 ], [ -128.088774866559561, 17.003627362760611 ], [ -129.404264179343443, 17.917891087635446 ], [ -131.037285395213132, 19.000090676630439 ], [ -132.761030011964408, 19.603053342337624 ], [ -134.212604426070783, 20.203737927167939 ], [ -135.845625641940416, 20.24655526692602 ], [ -138.385880866626536, 20.118067516079979 ], [ -140.154987183818662, 20.160908669956072 ], [ -143.148859412913026, 20.24655526692602 ], [ -146.233455042889062, 20.289360668474025 ], [ -148.00256136008116, 20.631371625525389 ], [ -150.58817828520813, 20.631371625525389 ], [ -152.448008003281899, 20.631371625525389 ], [ -153.52900528737203, 19.351146178031613 ], [ -155.223129950736507, 20.568779881334596 ], [ -155.601782548571805, 20.796836062082171 ], [ -156.290930276632025, 21.173786546681953 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 7, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -156.290930276632025, 21.173786546681953 ], [ -156.942212744908744, 21.670157891279469 ], [ -157.619241853535783, 23.12907069104951 ], [ -157.664603553976633, 23.673336813820658 ], [ -157.392433351331647, 24.298497445104207 ], [ -157.165624849127568, 25.085912084119759 ], [ -157.256348250009211, 25.991290913865154 ], [ -157.52851845265414, 26.848992268694431 ], [ -157.891412056180712, 27.498111002997753 ], [ -157.846050355739919, 29.223400913929829 ], [ -157.664603553976633, 31.037076747640832 ], [ -157.664603553976633, 31.737520018791308 ], [ -157.891412056180712, 32.47111797864428 ], [ -158.435752461470599, 33.313065663139653 ], [ -158.481114161911449, 33.844624911349342 ], [ -157.256348250009211, 34.560717178440449 ], [ -156.439837642074366, 35.512085232154142 ], [ -155.804773835902807, 36.488851929790904 ], [ -155.487241932817057, 37.47143094286578 ], [ -155.28311428083336, 38.226777278887582 ], [ -154.602688774221008, 38.903443124004994 ], [ -154.307837721355639, 39.643843728754462 ], [ -154.171752620033175, 40.428356869366056 ], [ -153.627412214743259, 41.647594779133023 ], [ -153.083071809453401, 42.526091844347157 ], [ -152.266561201518584, 43.359229618309527 ], [ -151.722220796228697, 44.409062344153618 ], [ -151.268603791820453, 45.087887685241093 ], [ -150.361369783003994, 46.138400955998073 ], [ -149.091242170660905, 47.477563308002878 ], [ -147.276774153027986, 49.379181333741812 ], [ -145.598391236717504, 51.038298740014795 ], [ -144.781880628782659, 52.140223194231005 ], [ -144.010731721288664, 53.269835263753556 ], [ -143.511753016439627, 54.55521417496314 ], [ -142.740604108945604, 55.59620658750756 ], [ -142.037497752112841, 56.896756043124903 ], [ -141.243667994398436, 57.731244091058102 ], [ -140.997615210085996, 58.474301627293492 ], [ -141.028626818702548, 59.110132881572881 ], [ -141.075144231627377, 59.380196918957751 ], [ -141.222449372555928, 59.746084838768816 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 8, "id": 3 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -122.015297120581977, 36.636989387032401 ], [ -128.222024861606315, 30.366430157681862 ], [ -129.514833324169814, 29.437674170574695 ], [ -130.898365187614928, 28.179188715396421 ], [ -131.601471544447719, 27.937746923359636 ], [ -132.894280007011218, 28.800362738348372 ], [ -134.572662923321701, 28.480217886187813 ], [ -138.859343614979622, 28.3398448258447 ], [ -140.152152077543121, 28.440130481347566 ], [ -145.096577425592955, 28.440130481347566 ], [ -146.173917811062552, 28.108824819194805 ], [ -146.865683742785109, 27.877300974425303 ], [ -147.557449674507694, 28.420081020329285 ], [ -148.181173055568991, 28.690424316507606 ], [ -149.190470890377355, 28.369940585698977 ], [ -150.120385749414254, 27.927674968943251 ], [ -150.868853806687838, 27.564454674633751 ], [ -152.501875022557527, 27.463343415171963 ], [ -153.216321804500524, 27.189875097050344 ], [ -154.112215388206778, 27.473458766231943 ], [ -154.463768566623173, 27.695758694554833 ], [ -155.098832372794703, 26.875055515576239 ], [ -155.722555753856057, 26.681661966518991 ], [ -156.425662110688847, 26.222302791706358 ], [ -157.049385491750144, 26.099495182088344 ], [ -157.76383227369314, 25.730291179738234 ], [ -158.500959905856547, 25.359924532563717 ], [ -159.340151364011774, 24.864314407347962 ], [ -160.485534300142604, 24.429000121496856 ], [ -161.131938531424368, 24.033830320452871 ], [ -164.216534161400403, 22.134919697453444 ], [ -165.101087319996481, 21.817599193950151 ], [ -166.416576632780391, 21.775235722813498 ], [ -167.32381064159685, 21.690470817356612 ], [ -168.094959549090873, 21.095711671933731 ], [ -169.251682910331908, 20.882708505881109 ], [ -170.930065826642391, 20.669399258201199 ], [ -171.950704086560961, 20.370256935680111 ], [ -173.969299756177634, 20.626700902075797 ], [ -174.785810364112479, 20.220464870054489 ], [ -177.575554941223174, 19.641335002438762 ], [ -179.707554758513481, 19.38325980315949 ], [ -179.999941473711321, 19.35747816311569 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 9, "id": 3 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 179.999941473711321, 19.35747816311569 ], [ 178.069721816457701, 19.18943111181116 ], [ 176.799594204114641, 19.576855314366561 ], [ 175.9604027459593, 19.275605855023805 ], [ 174.8490410851592, 19.340206837071744 ], [ 174.304700679869256, 20.134803756407422 ], [ 173.329424120391508, 20.391643824846849 ], [ 169.632445534464324, 20.284679409778768 ], [ 168.611807274545782, 20.049095106876152 ], [ 167.296317961761929, 20.370256935680111 ], [ 166.36640310272503, 20.712085472619741 ], [ 165.663296745892268, 21.159552558605878 ], [ 165.118956340602352, 20.733424020314981 ], [ 164.166360631345071, 20.241872701479114 ], [ 162.533339415475325, 20.306078281472143 ], [ 160.809594798723992, 20.712085472619741 ], [ 159.516786336160521, 20.434408594347044 ], [ 158.042531071833707, 20.882708505881109 ], [ 156.795084309711029, 21.159552558605878 ], [ 155.411552446265887, 20.370256935680111 ], [ 153.959978032159597, 20.006223008281939 ], [ 152.485722767832783, 20.327474161410251 ], [ 151.034148353726351, 20.049095106876152 ], [ 149.060914384550529, 20.027660536555544 ], [ 147.201084666476788, 19.834616609979843 ], [ 146.656744261186844, 19.383259796587083 ], [ 145.681467701709067, 18.865870475855232 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 10, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 158.9106808734754, 52.793079897659041 ], [ 159.891020364797356, 52.241718611772143 ], [ 160.276594818544311, 51.822041436948389 ], [ 160.503403320748447, 51.554195167877609 ], [ 160.299275668764722, 51.185083543752214 ], [ 160.163190567442257, 50.913454195686569 ], [ 160.117828867001464, 50.48130028612794 ], [ 160.072467166560585, 49.928147408956185 ], [ 160.367318219425982, 49.398151106575121 ], [ 160.435360770087271, 49.13097338720597 ], [ 160.934339474936309, 48.727476080947611 ], [ 161.161147977140416, 48.062887576027485 ], [ 161.002382025597484, 47.003072897360695 ], [ 161.206509677581209, 45.969139076360435 ], [ 161.501360730446606, 45.188718516937399 ], [ 161.524041580666989, 44.705519686670897 ], [ 161.88693518419359, 44.038525307168214 ], [ 162.159105386838576, 43.413507095502631 ], [ 163.247786197418321, 42.832024711837903 ], [ 163.860169153369526, 42.564350926347672 ], [ 164.495232959540999, 41.97476505999996 ], [ 164.880807413287982, 41.242819925631188 ], [ 164.880807413287982, 40.329163136984832 ], [ 165.084935065271708, 39.613699483623854 ], [ 165.719998871443295, 39.103090023453902 ], [ 166.400424378055675, 38.730993017585313 ], [ 167.103530734888437, 38.535300788651902 ], [ 167.103530734888437, 38.624318565470197 ], [ 167.284977536651667, 38.196019797956296 ], [ 167.829317941941582, 37.819162092605303 ], [ 169.643785959574586, 37.729146389702002 ], [ 171.29948802566463, 37.530723104684562 ], [ 172.433530536685254, 37.512658142904328 ], [ 174.406764505861076, 37.63902021517729 ], [ 178.035700541127056, 37.711129989785277 ], [ 179.999941473711321, 37.638412375090859 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 11, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -179.999941473711321, 37.638412375090859 ], [ -179.536682163299105, 37.621096020674479 ], [ -178.811661278235619, 37.729146389702024 ], [ -177.768342168096666, 37.602938832585103 ], [ -177.405448564570065, 37.005051183256434 ], [ -176.906469859721, 36.494002630416823 ], [ -176.112640102006566, 36.126870420067604 ], [ -175.477576295835036, 35.961092715572079 ], [ -174.751789088781834, 35.164199404667244 ], [ -174.275491234153179, 34.584754574293257 ], [ -173.685789128422442, 33.698420253736089 ], [ -172.710512568944722, 32.457297670704598 ], [ -172.801235969826394, 31.568366028215767 ], [ -173.118767872912173, 30.041374600186636 ], [ -173.345576375116281, 29.328420586213408 ], [ -174.071363582169482, 28.890225313478258 ], [ -174.026001881728632, 28.329810990678762 ], [ -173.254852974234637, 27.60487286114704 ], [ -172.529065767181436, 26.793667239210983 ], [ -172.665150868503929, 24.905692685773566 ], [ -172.619789168063079, 23.700098932453255 ], [ -172.302257264977328, 22.862005776441105 ], [ -172.256895564536507, 21.04248971372229 ], [ -172.801235969826394, 17.031586045701655 ], [ -172.483704066740643, 14.925448108994063 ], [ -172.166172163654863, 10.473112225790137 ], [ -171.848640260569084, 7.043936757392281 ], [ -171.440384956601662, 5.000506975396743 ], [ -171.894001961009906, 4.044528389255899 ], [ -172.891959370708037, 3.224197293860297 ], [ -173.300214674675516, 2.600896058901488 ], [ -173.542143743693231, 1.870786131603938 ], [ -173.542143743693231, 0.927288804185658 ], [ -173.572384877320445, -0.168687894805975 ], [ -173.088526739284987, -0.960211124367119 ], [ -171.636952325178612, -2.816248358426214 ], [ -170.638994915480453, -3.910336399079025 ], [ -170.185377911072237, -4.699635435831013 ], [ -169.610796372155136, -5.821272357147058 ], [ -168.098739690794304, -7.695481700885765 ], [ -166.949576612960072, -9.471274730231112 ], [ -166.314512806788542, -10.969007156892843 ], [ -166.223789405906899, -12.369921483697073 ], [ -166.193548272279685, -12.963806491809247 ], [ -166.828612078451215, -13.733707670354301 ], [ -167.463675884622745, -14.265229193317097 ], [ -167.826569488149346, -14.55997446685403 ], [ -168.703562363338619, -14.324209753956357 ], [ -169.308385035882935, -13.970093045311149 ], [ -170.215619044699451, -13.645000659520459 ], [ -170.759959449989339, -13.349067833717811 ], [ -171.939363661450756, -13.349067833717811 ], [ -172.833938793276815, -13.401211048885173 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 12, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -109.324607991080299, -27.073191000471205 ], [ -108.902484741019748, -27.045517452392549 ], [ -108.084264972156348, -27.33628119503226 ], [ -104.183158734245524, -27.33628119503226 ], [ -100.735669500742915, -26.930432393472643 ], [ -98.195414276056781, -26.930432393472643 ], [ -96.290222857542204, -27.011721143497557 ], [ -94.929371844317487, -27.579073205667214 ], [ -91.118989007288263, -28.22386115848564 ], [ -87.852946575548955, -28.784844086380275 ], [ -85.857031756152722, -29.223491002616854 ], [ -84.087925438960596, -29.739454314973937 ], [ -81.774478716478583, -30.841664581777252 ], [ -79.415670293555749, -31.698832957861516 ], [ -77.586567869326004, -32.754667754396415 ], [ -76.071957477984867, -33.620655144743232 ], [ -74.405886047509611, -35.326441156446229 ], [ -73.241529309166125, -36.81498288061497 ], [ -73.161302289999753, -36.830964774884258 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 13, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -29.314928901320549, -20.505096790549391 ], [ -29.222928152940245, -20.42182098663767 ], [ -28.287656236286907, -19.903362645148579 ], [ -27.635289240355519, -19.291183040962675 ], [ -25.956906324045004, -17.559369421269434 ], [ -24.233161707293736, -14.753874818167628 ], [ -22.464055390101652, -11.553667219682016 ], [ -21.602183081725965, -9.758964176935772 ], [ -20.785672473791141, -8.27084394888243 ], [ -20.195970368060465, -7.547212460271402 ], [ -19.696991663211382, -5.914724702960532 ], [ -18.653672553072454, -3.548392400902648 ], [ -17.655715143374316, -1.769378980004156 ], [ -17.247459839406901, -0.262638402972485 ], [ -16.657757733676224, 0.833348859162402 ], [ -15.750523724859805, 1.974667754521614 ], [ -14.752566315161664, 2.841563734975791 ], [ -13.164906799732847, 3.753369858631058 ], [ -12.34839619179802, 4.254467362603379 ], [ -12.938098297528697, 4.982736696964363 ], [ -13.663885504581879, 5.846486014825771 ], [ -15.296906720451558, 7.479204720917266 ], [ -15.977332227063904, 8.609488479975932 ], [ -16.385587531031316, 9.826352275678834 ], [ -17.111374738084471, 10.859397565024342 ], [ -18.426864050868382, 12.156752398941487 ], [ -19.107289557480755, 13.047802356627422 ], [ -19.515544861448067, 14.886161607785658 ], [ -19.765034213872607, 16.861723250150835 ], [ -19.833076764533836, 19.44176644427866 ], [ -19.651629962770546, 19.89295710556652 ], [ -19.016566156599009, 20.834074190556674 ], [ -18.585630002411204, 21.896335049589922 ], [ -17.973247046460084, 23.244392287674362 ], [ -17.746438544255984, 24.288103328393497 ], [ -17.406225790949772, 25.240725239765883 ], [ -16.884566235880325, 26.0015394294097 ], [ -16.34022583059043, 27.062404524233411 ], [ -16.362906680810823, 27.891785924796331 ], [ -16.226072229100847, 28.390002073112068 ], [ -16.243289307155617, 28.459039972417553 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 14, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -48.434577677734524, -27.640225308978575 ], [ -48.408545311633368, -27.618514969452768 ], [ -48.11272296957452, -26.790531782512257 ], [ -47.639799134758732, -26.26777548362173 ], [ -47.503714033436253, -25.734878056142581 ], [ -46.91401192770558, -25.57041988663962 ], [ -46.415033222856508, -26.145016332357294 ], [ -46.052139619329921, -26.512900163178763 ], [ -44.645926905664368, -26.390403568159453 ], [ -44.328395002578624, -26.26777548362173 ], [ -43.421160993762136, -25.529269576851064 ], [ -41.697416377010825, -24.827543811119252 ], [ -40.200480262463671, -23.621196717960594 ], [ -39.429331354969641, -23.45390431657696 ], [ -38.839629249238946, -23.621196717960594 ], [ -38.522097346153195, -23.328294129313434 ], [ -37.750948438659201, -22.487844749399933 ], [ -36.61690592763857, -22.192452687159626 ], [ -35.755033619262917, -21.302524685165018 ], [ -35.392140015736345, -20.449871043321092 ], [ -34.938523011328094, -19.59240328797549 ], [ -34.363847142175317, -19.234072158949573 ], [ -33.532310297662569, -19.118804405370255 ], [ -32.806523090609382, -19.46337817906231 ], [ -30.881426531459038, -20.16102188642142 ], [ -29.314928901320549, -20.505096790549391 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 15, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.161302289999753, -36.830964774884258 ], [ -73.578530121239524, -36.931345283837736 ], [ -73.800041890973162, -37.057392352298812 ], [ -73.972266240656907, -37.543786345969799 ], [ -74.335159844183494, -38.619394838860991 ], [ -75.060947051236681, -39.819044947967953 ], [ -76.10426616137562, -41.03231155392821 ], [ -77.10222357107375, -42.660232655093125 ], [ -78.190904381653525, -44.506602304779321 ], [ -79.052776690029162, -45.408389327629138 ], [ -79.823925597523171, -46.609432889398271 ], [ -80.050734099727293, -48.24081290303679 ], [ -80.277542601931415, -49.556627760896241 ], [ -80.776521306780495, -50.491766322033627 ], [ -81.411585112951997, -51.380280167477025 ], [ -81.774478716478598, -52.61222885767318 ], [ -81.411585112951997, -54.131227998803809 ], [ -80.821883007221302, -55.260924770956962 ], [ -80.322904302372237, -56.334066859227477 ], [ -79.597117095319064, -57.353229400285315 ], [ -78.962053289147519, -57.597595857366045 ], [ -77.510478875041173, -57.767677710109346 ], [ -76.285712963138934, -58.34475617427325 ], [ -75.151670452118339, -59.169667632598639 ], [ -74.471244945505987, -59.884011543979383 ], [ -73.836181139334442, -60.291857428852133 ], [ -73.155755632722091, -59.952337801196933 ], [ -71.976351421260674, -59.309114858032238 ], [ -70.61550040803597, -58.724297237872122 ], [ -69.073202593047967, -58.20136306461184 ], [ -68.392777086435629, -57.816125480048079 ], [ -67.304096275855827, -57.500046141109792 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 16, "id": 1 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -67.304096275855827, -57.500046141109792 ], [ -65.761798460867851, -57.426711665805968 ], [ -64.083415544557369, -57.279599164821938 ], [ -63.811245341912439, -56.934029660984208 ], [ -63.448351738385824, -56.610239044791541 ], [ -63.312266637063367, -56.258396679482814 ], [ -63.652479390369514, -55.788431102603191 ], [ -63.728800447272825, -55.594995163437375 ], [ -63.721047545118687, -55.366041361920395 ], [ -63.581495306344245, -55.086862045321148 ], [ -63.53497789341943, -54.74745001290907 ], [ -63.705541740810418, -54.300997489490022 ], [ -64.196819795659408, -54.037881449645973 ], [ -64.582394249406391, -53.702776350824934 ], [ -65.398904857341222, -53.215474485787269 ], [ -65.920564412410684, -52.487796025959405 ], [ -66.170053764835217, -51.775962567859828 ], [ -66.14737291461482, -51.663263720074028 ], [ -66.283458015937299, -51.351884546098916 ], [ -66.056649513733163, -50.751481088895183 ], [ -65.557670808884097, -50.084895508018924 ], [ -65.013330403594239, -49.67452200299752 ], [ -64.400947447643119, -49.394054674630283 ], [ -63.765883641471568, -49.453234954423159 ], [ -62.677202830891822, -49.718658418329511 ], [ -61.860692222956992, -49.7774442761649 ], [ -61.543160319871198, -49.630345270797747 ], [ -61.270990117226262, -49.34962235015157 ], [ -61.293670967446694, -48.798299112650696 ], [ -61.475117769209973, -48.104274373254007 ], [ -61.339032667887494, -47.615839731301435 ], [ -60.953458214140511, -47.2619155782902 ], [ -60.590564610613932, -46.765511672590513 ], [ -60.31839440796896, -46.546874287138451 ], [ -59.864777403560723, -46.43722193982282 ], [ -59.365798698711693, -46.890047994000028 ], [ -58.889500844083017, -47.585158793725334 ], [ -58.390522139233958, -47.921653871951136 ], [ -57.574011531299128, -48.013045452716305 ], [ -57.00699027578883, -47.860635754531351 ], [ -56.938947725127605, -47.508377242812401 ], [ -56.780181773584737, -46.890047994000028 ], [ -56.576054121601025, -46.484243046119687 ], [ -56.145117967413185, -45.996386922445417 ], [ -54.489415901323142, -44.587699127138279 ], [ -53.922394645812844, -44.164753471555436 ], [ -52.606905333028955, -43.342753135824601 ], [ -51.450181971787934, -42.509389278790692 ], [ -51.064607518040923, -42.139113905200233 ], [ -50.520267112751071, -42.054654335194847 ], [ -50.06665010834282, -41.970081464849478 ], [ -49.703756504816241, -41.460266719763183 ], [ -49.522309703052933, -40.963576747407842 ], [ -48.932607597322253, -40.911978252679852 ], [ -48.161458689828208, -40.980767219709747 ], [ -47.730522535640404, -41.255200702567763 ], [ -47.412990632554653, -41.528477362098435 ], [ -46.959373628146402, -41.647671810101727 ], [ -46.709884275721876, -41.409061249837571 ], [ -46.278948121534029, -41.203832502352363 ], [ -45.825331117125835, -41.238082487612687 ], [ -44.895416258088922, -41.340723987841216 ], [ -44.419118403460281, -41.698687264086878 ], [ -44.419118403460281, -42.139113905200233 ], [ -43.579926945305019, -42.643490435922295 ], [ -42.559288685386491, -43.060683635592518 ], [ -41.720097227231271, -43.392393751843656 ], [ -41.515969575247567, -43.886549155430387 ], [ -41.06235257083933, -44.490369289661331 ], [ -39.814905808716659, -44.603904840919739 ], [ -37.354033559802033, -44.555274048870494 ], [ -36.333395299883463, -44.563382024774434 ], [ -35.64162936816092, -44.335928707227069 ], [ -34.881820885777138, -43.63998305419841 ], [ -34.450884731589284, -43.193585831318543 ], [ -33.963246451850424, -42.952486485314601 ], [ -33.39622519634014, -42.994123488894395 ], [ -33.056012443033978, -43.284787376337121 ], [ -32.829203940829828, -43.804474161850273 ], [ -32.874565641270664, -44.213711867408314 ], [ -32.500331612633886, -44.612005991471328 ], [ -31.96733163245419, -44.311505813968061 ], [ -31.899289081792965, -44.066713839935133 ], [ -31.853927381352129, -43.788045517627317 ], [ -31.479693352715355, -43.71406033414123 ], [ -31.252884850511204, -43.94393398869795 ], [ -30.583799769009055, -44.441642943194097 ], [ -30.186884890151862, -44.514717106012206 ], [ -29.926055112617124, -44.270778242021571 ], [ -29.994097663278353, -43.952127273103322 ], [ -30.379672117025322, -43.631746560683375 ], [ -30.946693372535634, -43.035732099173757 ], [ -31.445672077384717, -42.484212976239704 ], [ -31.763203980470433, -41.893869034986828 ], [ -33.441586896780947, -39.635155266938717 ], [ -35.460182566397606, -37.136330760829431 ], [ -36.548863376977351, -36.278033001020198 ], [ -37.88703353998163, -35.614098436020875 ], [ -39.88294835937787, -34.570183412920549 ], [ -41.357203623704642, -33.702653008979183 ], [ -42.151033381419076, -32.807037276040582 ], [ -42.763416337370181, -31.766678160260451 ], [ -42.808778037811017, -30.518208052305912 ], [ -43.171671641337596, -29.78892603755045 ], [ -44.237671601696967, -28.994432908242096 ], [ -45.870692817566606, -28.233905084938581 ], [ -47.61526811916842, -28.12660891565606 ], [ -48.434577677734524, -27.640225308978575 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 17, "id": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -141.222449372555928, 59.746084838768816 ], [ -140.640981710995732, 59.648119822147443 ], [ -140.016441621671476, 59.575178254667065 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 18, "id": 2 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -137.764451838380381, 58.558689827583308 ], [ -137.524907527915275, 58.422590135067068 ], [ -136.570702981370346, 57.667688782309476 ], [ -136.161758175708258, 57.280108284731831 ], [ -135.972431876790608, 56.917392765828403 ], [ -135.752813370046141, 56.722206977069341 ], [ -135.32872246047063, 56.227652884049085 ], [ -134.859193239154848, 55.888671111206797 ], [ -134.238202978705004, 55.632467009594563 ], [ -133.859550380869706, 55.434897307421615 ], [ -133.814112069129493, 55.16702792541971 ], [ -133.586920510428314, 54.897338694126574 ], [ -133.405167263467376, 54.713608734073041 ], [ -133.149439571990825, 54.621486221342067 ], [ -133.104077871550004, 54.357403491019632 ], [ -133.330886373754112, 54.144901828380888 ], [ -133.28552467331329, 53.931298889804452 ], [ -133.27985446075823, 53.652637802709684 ], [ -133.019024683223478, 53.328007241855268 ], [ -132.74685448057852, 53.035068741091855 ], [ -132.372620451941714, 52.719463407697923 ], [ -131.884982172202854, 52.408482207330145 ], [ -131.454046018015021, 52.060344560668518 ], [ -131.023109863827187, 51.8290685199023 ], [ -130.38237584510054, 52.070828639414962 ], [ -129.611226937606517, 52.321704998301733 ], [ -129.288024821965678, 52.411949733131038 ], [ -129.021524831875809, 52.411949733131038 ], [ -128.794716329671701, 52.349492343862025 ], [ -128.567907827467593, 51.934342586296275 ], [ -128.460173788920628, 51.75874809768078 ], [ -128.318418475043046, 51.529444961601072 ], [ -128.295737624822635, 51.252740781357176 ], [ -128.4318227261451, 51.110188163012694 ], [ -128.567907827467565, 50.622189524470336 ], [ -128.136971673279731, 50.099876713729707 ], [ -127.581290842879653, 49.711698164157141 ], [ -127.048290862699957, 49.593894495252151 ], [ -126.526631307630481, 49.246186605313802 ], [ -126.254461104985523, 48.82865792965314 ], [ -125.936929201899744, 48.82865792965314 ], [ -125.335886671058859, 48.641122293561928 ], [ -125.052376043303695, 48.505660768383876 ], [ -124.938971792201613, 47.891561483562676 ], [ -124.621439889115848, 47.339471385509938 ], [ -124.439993087352576, 46.991434702340278 ], [ -124.269886710699453, 46.398425780607631 ], [ -124.167822884707618, 45.679748212084171 ], [ -124.167822884707618, 45.360868264888872 ], [ -124.39463138691174, 44.652927301910047 ], [ -124.576078188675027, 44.099848670207386 ], [ -124.621439889115862, 43.343195481093481 ], [ -124.666801589556684, 42.710879032734546 ], [ -124.576078188675027, 41.970533756335406 ], [ -124.723503715107711, 41.34118075405879 ], [ -124.746184565328122, 40.472215293707571 ], [ -124.474014362683164, 39.968012112190209 ], [ -124.167822884707618, 39.460032699556422 ], [ -123.88431225695247, 38.762076199837786 ], [ -123.668844179858539, 38.352466809760905 ], [ -123.339971851662568, 38.021293073906762 ], [ -122.761610171042065, 37.67057693703957 ], [ -122.575702965378198, 37.002304526415401 ], [ -122.015297120581977, 36.636989387032401 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 19, "id": 3 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 145.681467701709067, 18.865870475855232 ], [ 145.159808146639648, 18.973794819550871 ], [ 144.660829441790497, 19.361734754800558 ], [ 143.23193587790459, 19.318676046078835 ], [ 142.097893366883966, 19.340206837071733 ], [ 141.394787010051232, 19.555356276244044 ], [ 140.918489155422549, 19.103210697281416 ], [ 140.033935996826443, 19.081648477725178 ], [ 138.219467979193467, 19.124770073167578 ], [ 137.266872269936187, 19.576855314366554 ], [ 136.518404212662631, 19.920443367982003 ], [ 134.817340446131738, 19.984782524670003 ], [ 133.705978785331524, 20.049095106876152 ], [ 132.912149027617033, 20.477161334897879 ], [ 131.165723560645375, 20.455786469527936 ], [ 129.94095764874308, 20.199054057237962 ], [ 128.829595987942952, 19.94189270190018 ], [ 127.446064124497767, 19.813152578037382 ], [ 126.833681168546619, 20.348867047007428 ], [ 126.470787565020046, 20.92533370655169 ], [ 125.359425904219762, 20.882708505881109 ], [ 124.293425943860427, 20.712085472619741 ], [ 123.199954371629488, 21.08141617896781 ], [ 122.185165409430951, 21.024543978170211 ], [ 121.215814758972641, 20.725605771211804 ], [ 120.210872904186289, 20.498533187885762 ], [ 118.781979340300325, 20.583990424669462 ], [ 117.489170877736811, 20.626700902075772 ], [ 115.652022009883467, 20.648051596575989 ], [ 114.767468851287362, 20.733424020314946 ], [ 114.155085895336228, 20.989248507078059 ], [ 113.642762802266915, 21.776300152064639 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 20, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 119.606541218172595, 23.101535357728039 ], [ 119.564889432410666, 22.610250310967057 ], [ 119.235596344708568, 21.881120618784323 ], [ 119.82529845043922, 21.520789702121398 ], [ 120.551085657492479, 21.372154054974921 ], [ 121.072745212561898, 21.584443706416188 ], [ 121.435638816088485, 22.388257056763301 ], [ 121.707809018733542, 23.66876711750956 ], [ 122.229468573802919, 24.501658898307127 ], [ 122.728447278651998, 25.945802229292131 ], [ 123.204745133280738, 26.232530855938624 ], [ 122.547000476888712, 26.946221722229886 ], [ 122.501638776447976, 28.018288387496643 ], [ 122.501638776447976, 28.480217886187784 ], [ 123.227425983501135, 29.437674170574688 ], [ 123.272787683942013, 30.484362873406901 ], [ 123.340830234603146, 31.442056375812438 ], [ 124.180021692758359, 32.486137623785098 ], [ 125.041894001134068, 32.869777288062025 ], [ 126.425425864579267, 32.98454431199216 ], [ 126.853951940739904, 33.193053164093222 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 21, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 126.853951940739904, 33.193053164093222 ], [ 127.241936472514084, 33.707898625657478 ], [ 128.618473046652412, 34.328409427154959 ], [ 129.485587495695228, 35.07267988598889 ], [ 129.879386197443921, 35.760799180799474 ], [ 129.886959249400604, 36.228513694816769 ], [ 130.07704275006563, 36.631227139602458 ], [ 130.349212952710559, 36.904937735075684 ], [ 130.326532102490091, 37.810165495970153 ], [ 130.961595908661593, 38.222863418302353 ], [ 131.93687246813937, 38.57982358093183 ], [ 132.980191578278323, 38.704339432655125 ], [ 134.046191538637714, 38.597624912195741 ], [ 134.023510688417304, 38.222863418302353 ], [ 134.227638340401001, 37.756162703984465 ], [ 134.522489393266284, 37.485552430748129 ], [ 134.749297895470477, 37.485552430748129 ], [ 135.066829798556228, 37.989887275319241 ], [ 135.044148948335817, 38.348001612257157 ], [ 135.339000001201214, 38.348001612257157 ], [ 135.883340406491044, 37.989887275319241 ], [ 136.132829758915562, 37.882107308452682 ], [ 136.495723362442249, 37.971935015151431 ], [ 136.654489313985096, 38.508573769443124 ], [ 136.518404212662631, 39.041210488373189 ], [ 136.019425507813509, 39.464427936968328 ], [ 135.339000001201214, 39.920003545438192 ], [ 134.749297895470477, 40.076996187041324 ], [ 133.72865963555202, 40.563088938542116 ], [ 133.683297935111142, 41.473517557482722 ], [ 134.227638340401001, 42.185969110987799 ], [ 135.021468098115491, 42.957096631837622 ], [ 136.314276560678906, 43.981232448930015 ], [ 136.790574415307589, 44.535432634910329 ], [ 136.710279062392516, 44.97123369662598 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 22, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 136.710279062392516, 44.97123369662598 ], [ 137.425638221479176, 45.180698757442485 ], [ 138.33091218112753, 45.823533095102462 ], [ 138.921610233750584, 46.538928229523044 ], [ 139.663769325507729, 47.265586220743714 ], [ 140.557389456399051, 47.686601218417699 ], [ 141.031893406524631, 47.979199609653584 ], [ 141.440148710492082, 48.222276091237141 ], [ 141.508191261153257, 48.434019971946604 ], [ 141.39799822359339, 49.144664754509527 ], [ 141.508191261153257, 50.633009627303529 ], [ 141.46994221718208, 51.804186776298366 ], [ 141.522953580879005, 52.075663345664829 ], [ 141.575964944575958, 52.112978872202277 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 23, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 141.575964944575958, 52.112978872202277 ], [ 141.613830204359459, 52.042986522380247 ], [ 141.564605366640933, 51.862834277116292 ], [ 141.606257152402804, 51.686661364593462 ], [ 141.734999763357393, 51.27764193895861 ], [ 141.712318913136983, 49.272165155030564 ], [ 141.644122412186363, 48.630279307891826 ], [ 141.6896380629166, 48.146438891082205 ], [ 141.372106159830849, 47.704355712826199 ], [ 141.304063609169617, 47.181205876363428 ], [ 140.920895950320983, 46.446090136385358 ], [ 141.132941405108738, 45.928004765904632 ], [ 142.041707639913426, 45.692333785491392 ], [ 142.840664621345894, 45.748032020460656 ], [ 143.458744380108698, 45.85039458981241 ], [ 144.071127336059902, 45.992857292186443 ], [ 144.434020939586532, 46.308123164787247 ], [ 145.273212397741702, 46.668432840820493 ], [ 145.930957054133671, 46.512071588645178 ], [ 146.316531507880654, 46.386655694381787 ], [ 146.747467662068516, 46.22947707733654 ], [ 147.133042115815471, 46.245215380330201 ], [ 147.54129741978295, 46.449399969012326 ], [ 148.493893129040231, 46.746443259196951 ], [ 148.992871833889353, 46.730850251615017 ], [ 149.310403736975047, 46.699650622672713 ], [ 149.67329734050162, 46.699650622672713 ], [ 149.786701591603787, 47.041848459935373 ], [ 150.036190944028363, 47.397254482759138 ], [ 150.421765397775317, 47.489574974841517 ], [ 150.716616450640686, 47.381851884503959 ], [ 150.864041977073271, 46.839906019852727 ], [ 151.124871754608023, 46.559027629737884 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 24, "id": 5 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 151.124871754608023, 46.559027629737884 ], [ 151.612510034346968, 46.323838754744642 ], [ 151.850658961661196, 46.190111443763477 ], [ 152.406339792061402, 46.33169484640068 ], [ 152.98470147268182, 46.582490328198325 ], [ 153.665126979294172, 46.90989591199093 ], [ 154.458956737008606, 47.266188016955823 ], [ 155.264126919833188, 47.520312250378552 ], [ 155.808467325123104, 47.788491228544466 ], [ 157.464169391213261, 48.742478929632135 ], [ 158.507488501352213, 49.427747736198363 ], [ 158.825020404437993, 49.928147408956185 ], [ 158.530169351572596, 50.234633944121121 ], [ 158.825020404437993, 50.654642322929121 ], [ 159.301318259066647, 50.769847646708733 ], [ 159.732254413254395, 50.927790416680935 ], [ 159.754935263474891, 51.256298919966234 ], [ 159.550807611491166, 51.709458207745357 ], [ 158.918253925432083, 52.178205578395747 ], [ 158.9106808734754, 52.793079897659041 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 25, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -172.833938793276815, -13.401211048885173 ], [ -172.903714912664043, -13.867525982143068 ], [ -172.483704066740643, -14.235733046128152 ], [ -172.453462933113428, -14.618875968859081 ], [ -172.846597670267244, -15.030735559152262 ], [ -173.209491273793844, -15.617707943691006 ], [ -173.481661476438802, -16.349030518281079 ], [ -175.136550733055259, -17.196788871987646 ], [ -175.043515907205631, -17.881060233783909 ], [ -174.857446255506375, -18.207386174933973 ], [ -174.524793785607017, -18.870828664334287 ], [ -175.074527515822155, -19.447596477242669 ], [ -175.105539124438707, -20.181330310736872 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 26, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -179.536682163299105, 37.621096020674479 ], [ -179.536682163299105, 37.621096020674479 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 27, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -175.105539124438707, -20.181330310736872 ], [ -174.796963988251946, -20.888779900344758 ], [ -174.796963988251946, -21.427765366552091 ], [ -174.857446255506375, -22.274696243600417 ], [ -175.043515907205631, -23.051783044800658 ], [ -175.59854083034395, -23.716291604770557 ], [ -176.203363502888266, -23.660592331433847 ], [ -176.86866844268701, -23.74413222751275 ], [ -177.564214516112969, -24.133266826790486 ], [ -178.410966257675057, -24.714726297328934 ], [ -179.923022172880707, -24.93551819364864 ], [ -179.999941473711321, -24.9554941819421 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 28, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 179.999941473711321, -24.9554941819421 ], [ 179.079019651266009, -25.183431993528604 ], [ 177.65768637078682, -25.540630203955729 ], [ 176.357317624816517, -25.97878536809095 ], [ 174.935984344337328, -26.279064452155847 ], [ 173.484409930231038, -26.76873762017205 ], [ 172.90982839131388, -27.229256528475407 ], [ 172.153800050633492, -27.903001954354067 ], [ 171.246566041817005, -28.492415332294676 ], [ 170.036920696728373, -28.892394918027591 ], [ 169.069204420657428, -28.812522629479233 ], [ 168.343417213604283, -28.572534661195103 ], [ 167.557147739296568, -28.892394918027591 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 29, "id": 6 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 167.557147739296568, -28.892394918027591 ], [ 166.528949195971279, -29.396807898783301 ], [ 164.563275510202175, -30.398063904852748 ], [ 163.777006035894573, -31.051201220033349 ], [ 163.051218828841314, -31.80320492698587 ], [ 161.660126681989453, -32.600291120665268 ], [ 160.78313380680018, -33.136226772223303 ], [ 158.787218987403861, -33.415646390018857 ], [ 157.517091375060772, -33.466352884812977 ], [ 155.79334675830944, -33.567676081993227 ], [ 155.128041818510752, -33.996960314757516 ], [ 154.795389348611394, -34.5242440870067 ], [ 153.857914206167663, -34.72423491925781 ], [ 152.697410703223142, -34.702384619546962 ], [ 152.119049022602695, -34.533629518257527 ], [ 151.971623496170025, -34.279848621366718 ], [ 151.971623496170025, -33.930815654601837 ], [ 152.005644771500613, -33.836233287156858 ] ] ] } },
+            { "type": "Feature", "properties": { "fid": 30, "id": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 152.005644771500613, -33.836233287156858 ], [ 153.336272657150062, -32.987554043623462 ], [ 157.119688908368545, -30.389275120353965 ], [ 159.786687249391349, -28.324725962171605 ], [ 162.267615938714897, -26.302741577203602 ], [ 164.624498193572293, -24.925044268729163 ], [ 169.446803333444961, -23.461889558964554 ], [ 168.950617595580241, -21.153608293086968 ], [ 167.710153250918466, -20.161198659891031 ], [ 167.221720415207898, -19.11815189077053 ], [ 166.841828209655262, -18.112888945170642 ], [ 166.368901178252941, -17.771530324759503 ], [ 165.12843683359111, -14.383912158675363 ], [ 165.702151592997211, -12.059840677041212 ], [ 166.353395373944636, -11.540454111116432 ], [ 166.955698960044117, -11.520384439390504 ], [ 166.98864879419915, -11.586799935845232 ] ] ] } }
+            ]
+    }
+});
+
+        map.addLayer({
+    'id': 'route',
+    'type': 'line',
+    'source': 'route',
+    'layout': {
+        'line-join': 'round',
+        'line-cap': 'round'
+    },
+    'paint': {
+        'line-color':'#db0606',
+        'line-width': 2
+    }
+});
+    });
+
+
+    const chapters = {
+        'paris': {
+            bearing: 0,
+            center: [-3.52801, 46.43095],
+            zoom: 4.24,
+            pitch: 0
+        },
+        'st-gery': {
+            duration: 6000,
+            center: [1.76948, 43.83761],
+            bearing: 0,
+            zoom: 14,
+            pitch: 0
+        },
+        'brest': {
+            bearing: 0,
+            center: [-4.48128, 48.39502],
+            zoom: 9.20,
+            speed: 0.6,
+            pitch: 0
+        },
+        'madere-tenerife': {
+            bearing: 90,
+            center: [-19.50692, -9.04832],
+            zoom: 2.09
+        },
+        'trinidad-ste-catherine': {
+            bearing: 45,
+            center: [-0.18335806, 51.49439521],
+            zoom: 15.3,
+            pitch: 20,
+            speed: 0.5
+        },
+        'cap-horn': {
+            bearing: 180,
+            center: [-0.19684993, 51.5033856],
+            zoom: 12.3
+        },
+        'telegraph': {
+            bearing: 90,
+            center: [-0.10669358, 51.51433123],
+            zoom: 17.3,
+            pitch: 40
+        },
+        'charing-cross': {
+            bearing: 90,
+            center: [-0.12416858, 51.50779757],
+            zoom: 14.3,
+            pitch: 20
+        }
     };
 
-    // setup the instance, pass callback functions
-    scroller
-    .setup({
-        step: '.step',
-        offset: 0.5,
-        progress: true
-    })
-    .onStepEnter(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.add('active');
-        map[chapter.mapAnimation || 'flyTo'](chapter.location);
+    let activeChapterName = 'baker';
+    function setActiveChapter(chapterName) {
+        if (chapterName === activeChapterName) return;
 
-        if (config.showMarkers) {
-            marker.setLngLat(chapter.location.center);
-        }
-        if (chapter.onChapterEnter.length > 0) {
-            chapter.onChapterEnter.forEach(setLayerOpacity);
-        }
-        if (chapter.callback) {
-            window[chapter.callback]();
-        }
-        if (chapter.rotateAnimation) {
-            map.once('moveend', function() {
-                const rotateNumber = map.getBearing();
-                map.rotateTo(rotateNumber + 90, {
-                    duration: 24000, easing: function (t) {
-                        return t;
-                    }
-                });
-            });
-        }
-    })
-    .onStepExit(response => {
-        var chapter = config.chapters.find(chap => chap.id === response.element.id);
-        response.element.classList.remove('active');
-        if (chapter.onChapterExit.length > 0) {
-            chapter.onChapterExit.forEach(setLayerOpacity);
-        }
-    });
-});
+        map.flyTo(chapters[chapterName]);
 
-// setup resize event
-window.addEventListener('resize', scroller.resize);
+        document.getElementById(chapterName).classList.add('active');
+        document.getElementById(activeChapterName).classList.remove('active');
 
+        activeChapterName = chapterName;
+    }
+
+    function isElementOnScreen(id) {
+        const element = document.getElementById(id);
+        const bounds = element.getBoundingClientRect();
+        return bounds.top < window.innerHeight && bounds.bottom > 0;
+    }
+
+    // On every scroll event, check which element is on screen
+    window.onscroll = () => {
+        for (const chapterName in chapters) {
+            if (isElementOnScreen(chapterName)) {
+                setActiveChapter(chapterName);
+                break;
+            }
+        }
+    };
 </script>
 
 </body>
