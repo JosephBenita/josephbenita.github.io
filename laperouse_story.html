@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Lapérouse</title>
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png"/>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
@@ -36,7 +37,7 @@ body { margin: 0; padding: 0; }
     }
     section:last-child {
         border-bottom: none;
-        margin-bottom: 200px;
+        margin-bottom: 800px;
     }
 </style>
 
@@ -47,7 +48,7 @@ body { margin: 0; padding: 0; }
         <p>
             <strong>Juin 1785</strong>, Lapérouse écrit une lettre à la Marquise de St Géry.
             <p><right><span class="image main"><img src="laperouse/laperouse.jpg" alt=""  style="width:340px;height:389px;" /></span></right></p>
-            <i>Votre amitié, Madame, est essentielle à mon bonheur ; je le croyais à Albi, et j'osais, dans mes châteaux en Espagne, passer tous les ans deux mois chez vous avec ma femme. Je me flattais de vous recevoir chez moi ; mon amour-propre allait jusqu à l'espoir de vous rendre le séjour d'une aussi petite ville supportable.</i> </p>
+            <i><strong>Votre amitié, Madame, est essentielle à mon bonheur </strong>; je le croyais à Albi, et j'osais, dans mes châteaux en Espagne, passer tous les ans deux mois chez vous avec ma femme. Je me flattais de vous recevoir chez moi ; mon amour-propre allait jusqu à l'espoir de vous rendre le séjour d'une aussi petite ville supportable. [...]</i> </p>
         </p>
     </section>
     <section id="st-gery">
@@ -55,7 +56,7 @@ body { margin: 0; padding: 0; }
         <p>
             <p>Lapérouse et la marquise se connaissent au moins depuis ... .</p>
             <p><left><span class="image main"><img src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:331.25px;height:374px;" /></span></left><left></p>
-            <i><p>Combien ma situation est différente aujourd'hui ! <strong>Je pars pour faire le tour du monde.</strong> </p>
+            <i><p>[...] Combien ma situation est différente aujourd'hui ! <strong>Je pars pour faire le tour du monde.</strong> </p>
             <p>Si les sacrifices du cœur pouvaient être compensés par d'autres avantages, je n'aurais rien à désirer. Mais un grade de plus, quelque célébrité même, tout cela n'est rien pour le bonheur.</p>
             <p> Je pars avec des principes que vous m'auriez inspirés si nous avions eu le temps de nous entretenir ensemble de ce voyage. Je ferai tous mes efforts pour que les habitants des Iles que nous pourrons rencontrer, n'aient jamais à se repentir de nous avoir reçus. Votre ami (car j'ose prendre ce titre) ne sera pas vraisemblablement un grand homme, mais il sera bon, modéré, et vous n'aurez en lisant sa relation aucune injustice à excuser. </p>
             <p>Vous recevrez par le même courrier une médaille qui marque l'époque de mon départ ; je ne sais si à mon retour, j'aurai mérité qu'il en soit frappé une moins modeste. Je crains, en vérité, que ce voyage ne soit beaucoup au-dessous de l'opinion qu'on en a conçue. </p>
@@ -121,8 +122,8 @@ body { margin: 0; padding: 0; }
             plans in order to pay off his debts.
         </p>
     </section>
-    <section id="charing-cross">
-        <h3>Charing Cross Hotel</h3>
+    <section id="vanikoro">
+        <h3>Vanikoro</h3>
         <p>
             Walter writes to Oberstein and convinces him to meet in the smoking
             room of the Charing Cross Hotel where he promises additional plans
@@ -145,19 +146,6 @@ body { margin: 0; padding: 0; }
         zoom: 4.24,
         bearing: 0,
         pitch: 0
-    });
-
-    map.on('load', () => {
-        map.addSource('josephbenita-9t2ds669', {
-            'type': 'raster',
-            'url': 'josephbenita.9t2ds669'
-        });
- 
-        map.addLayer({
-            'id': 'josephbenita-9t2ds669',
-            'source': 'josephbenita-9t2ds669',
-            'type': 'raster'
-        });
     });
 
     map.on('load', () => {
@@ -277,9 +265,9 @@ body { margin: 0; padding: 0; }
         },
         'st-gery': {
             duration: 6000,
-            center: [1.76948, 43.83761],
+            center: [1.76772, 43.83872],
             bearing: 0,
-            zoom: 14,
+            zoom: 16,
             pitch: 0
         },
         'brest': {
@@ -312,15 +300,15 @@ body { margin: 0; padding: 0; }
             zoom: 17.3,
             pitch: 40
         },
-        'charing-cross': {
-            bearing: 90,
-            center: [-0.12416858, 51.50779757],
-            zoom: 14.3,
-            pitch: 20
+        'vanikoro': {
+            bearing: 0,
+            center: [166.89401, -11.64945],
+            zoom: 10.85,
+            pitch: 0
         }
     };
 
-    let activeChapterName = 'baker';
+    let activeChapterName = 'paris';
     function setActiveChapter(chapterName) {
         if (chapterName === activeChapterName) return;
 
