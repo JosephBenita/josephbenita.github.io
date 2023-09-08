@@ -22,10 +22,10 @@ body { margin: 0; padding: 0; }
     .map-overlay {
         position: sticky;
         top: 50px;
-        left: 0;
+        left: 100;
         background: #ffffff99;
         margin-left: 50px;
-        margin-top: 50px; 
+        margin-top: 20px; 
         font-family: Arial, sans-serif;
         overflow: auto;
         border-radius: 3px;
@@ -54,7 +54,7 @@ body { margin: 0; padding: 0; }
         font-family: sans-serif;
         overflow-y: scroll;
         background-color: #c1c1c1;
-        margin-top: -320px;
+        margin-top: -365px;
     }
     section {
         padding: 25px 50px;
@@ -76,8 +76,54 @@ body { margin: 0; padding: 0; }
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
 
+    #menu {
+        background: #ffffff7a;
+        position: sticky;
+        z-index: 1;
+        top: 0px;
+        left: 10px;
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        font-family: 'Open Sans', sans-serif;
+        margin-left: 50px;
+        margin-top: 10px;
+        overflow: auto;
+    }
+    
+    #menu a {
+        font-size: 13px;
+        color: #404040;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        text-align: center;
+    }
+    
+    #menu a:last-child {
+        border: none;
+    }
+    
+    #menu a:hover {
+        background-color: #f8f8f8;
+        color: #404040;
+    }
+    
+    #menu a.active {
+        background-color: #3887be;
+        color: #ffffff;
+    }
+    
+    #menu a.active:hover {
+    background: #a45530;
+    }
+
 </style>
 
+<nav id="menu"></nav>
 <div id="map"></div>
 <div class='map-overlay' id='legend'></div>
 <div class='map-overlay' id="features">
@@ -189,6 +235,7 @@ body { margin: 0; padding: 0; }
     </section>
 </div>
 <script>
+    //source mapbox
 	mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw';
     const map = new mapboxgl.Map({
         container: 'map',
@@ -199,9 +246,10 @@ body { margin: 0; padding: 0; }
         bearing: 0,
         pitch: 0
     });
-
+    
+    //chargements complémentaires + fonction
     map.on('load', () => {
-              
+        //ajout source point Lapérouse      
         map.addSource('places', {
         // This GeoJSON contains features that include an "icon"
         // property. The value of the "icon" property corresponds
@@ -241,7 +289,8 @@ body { margin: 0; padding: 0; }
                 { "type": "Feature", "properties": {"description":'<strong>Cap Horn</strong> janvier 1786', "id": null, "Nom": "Cap Horn", "icon":"dot-10"  }, "geometry": { "type": "Point", "coordinates": [ -67.246512053938886, -55.998416848715138 ] } }
             ]
         }})
-
+        
+        //ajout couche point Lapérouse   
         map.addLayer({
             'id': 'places',
             'type': 'symbol',
@@ -252,6 +301,7 @@ body { margin: 0; padding: 0; }
             }
         });
 
+        //Clic sur couche point
         map.on('click', 'places', (e) => {
             // Copy coordinates array.
             const coordinates = e.features[0].geometry.coordinates.slice();
@@ -270,17 +320,18 @@ body { margin: 0; padding: 0; }
             .addTo(map);
         });
             
-            // Change the cursor to a pointer when the mouse is over the places layer.
+        // Change the cursor to a pointer when the mouse is over the places layer.
         map.on('mouseenter', 'places', () => {
             map.getCanvas().style.cursor = 'pointer';
         });
             
-            // Change it back to a pointer when it leaves.
+        // Change it back to a pointer when it leaves.
         map.on('mouseleave', 'places', () => {
             map.getCanvas().style.cursor = '';
         });
 
-        map.addSource('route', {
+        //ajout source route de Lapérouse
+        map.addSource('Lapérouse', {
             'type': 'geojson',
             'data':{
                 'type': 'FeatureCollection',
@@ -319,11 +370,13 @@ body { margin: 0; padding: 0; }
             }
         });
 
+        //ajout couche route de Lapérouse
         map.addLayer({
-            'id': 'route',
+            'id': 'Lapérouse',
             'type': 'line',
-            'source': 'route',
+            'source': 'Lapérouse',
             'layout': {
+                'visibility':'visible',
                 'line-join': 'round',
                 'line-cap': 'round'
             },
@@ -333,7 +386,8 @@ body { margin: 0; padding: 0; }
             }
         });
 
-        map.addSource('lesseps', {
+        //ajout source route de Lesseps
+        map.addSource('Lesseps', {
             type: 'geojson',
             data: {
                 "type": "FeatureCollection",
@@ -356,12 +410,14 @@ body { margin: 0; padding: 0; }
             }
 
         })
-
+        
+        //ajout couche route de Lesseps
         map.addLayer({
-            'id': 'lesseps',
+            'id': 'Lesseps',
             'type': 'line',
-            'source': 'lesseps',
+            'source': 'Lesseps',
             'layout': {
+                'visibility':'visible',
                 'line-join': 'round',
                 'line-cap': 'round'
             },
@@ -373,6 +429,58 @@ body { margin: 0; padding: 0; }
         
     });
 
+    map.on('idle', () => {
+        // If these two layers were not added to the map, abort
+        if (!map.getLayer('Lapérouse') || !map.getLayer('Lesseps')) {
+        return;
+        }
+        
+        // Enumerate ids of the layers.
+        const toggleableLayerIds = ['Lapérouse', 'Lesseps'];
+        
+        // Set up the corresponding toggle button for each layer.
+        for (const id of toggleableLayerIds) {
+            // Skip layers that already have a button set up.
+            if (document.getElementById(id)) {
+            continue;
+            }
+        
+            // Create a link.
+            const link = document.createElement('a');
+            link.id = id;
+            link.href = '#';
+            link.textContent = id;
+            link.className = 'active';
+            
+            // Show or hide layer when the toggle is clicked.
+            link.onclick = function (e) {
+                const clickedLayer = this.textContent;
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const visibility = map.getLayoutProperty(
+                clickedLayer,
+                'visibility'
+                );
+                
+                // Toggle layer visibility by changing the layout object's visibility property.
+                if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+                } else {
+                    this.className = 'active';
+                    map.setLayoutProperty(
+                    clickedLayer,
+                    'visibility',
+                    'visible'
+                    );
+                }
+            };
+        
+        const layers = document.getElementById('menu');
+        layers.appendChild(link);
+        }
+    });
 
     const chapters = {
         'paris': {
