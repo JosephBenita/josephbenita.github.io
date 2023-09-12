@@ -10,6 +10,26 @@
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            z-index: 9999;
+        }
+
+#fullscreen img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+        }
+
 </style>
 </head>
 <body>
@@ -121,11 +141,28 @@ body { margin: 0; padding: 0; }
     background: #a45530;
     }
 
+    button {
+        position: absolute;
+        margin: 20px;
+    }
+ 
+    #pause::after {
+        content: 'Pause';
+    }
+ 
+    #pause.pause::after {
+        content: 'Play';
+    }
 </style>
 
 <nav id="menu"></nav>
 <div id="map"></div>
-<div class='map-overlay' id='legend'></div>
+   //div class='map-overlay' id='legend'></div>
+
+<div> id="fullscreen">
+    <img id="fullscreenImage" scr="" alt=""/>
+</div>
+
 <div class='map-overlay' id="features">
     <section id="paris" class="active">
         <h3>Paris</h3>
@@ -139,7 +176,7 @@ body { margin: 0; padding: 0; }
         <h3>St Géry</h3>
         <p>
             <p>Lapérouse et la marquise se connaissent au moins depuis ... .</p>
-            <p><left><span class="image main"><img src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:331.25px;height:374px;" /></span></left><left></p>
+            <p><left><span class="image main"><img id="imageToFullscreen" src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:331.25px;height:374px;" /></span></left></p>
             <i><p>[...] Combien ma situation est différente aujourd'hui ! <strong>Je pars pour faire le tour du monde.</strong> </p>
             <p>Si les sacrifices du cœur pouvaient être compensés par d'autres avantages, je n'aurais rien à désirer. Mais un grade de plus, quelque célébrité même, tout cela n'est rien pour le bonheur.</p>
             <p> Je pars avec des principes que vous m'auriez inspirés si nous avions eu le temps de nous entretenir ensemble de ce voyage. Je ferai tous mes efforts pour que les habitants des Iles que nous pourrons rencontrer, n'aient jamais à se repentir de nous avoir reçus. Votre ami (car j'ose prendre ce titre) ne sera pas vraisemblablement un grand homme, mais il sera bon, modéré, et vous n'aurez en lisant sa relation aucune injustice à excuser. </p>
@@ -164,12 +201,8 @@ body { margin: 0; padding: 0; }
     <section id="atlantique">
         <h3>Jusqu'au Cap Horn</h3>
         <p>
-            While investigating at Woolwich Arsenal Sherlock learns that West
-            did not have the three keys&mdash;door, office, and
-            safe&mdash;necessary to steal the papers. The train station clerk
-            mentions seeing an agitated West boarding the 8:15 train to London
-            Bridge. Sherlock suspects West of following someone who had access
-            to the Woolwich chief's keyring with all three keys.
+            Au bois de 5 mois de navigation, La Boussole et l'Astrolabe arrivent au Cap Horn après avoir fait escale à 
+            Madère, Ténérife, Trinidad et Sainte Catherine. Cette partie 
         </p>
     </section>
     <section id="cap-horn">
@@ -187,6 +220,8 @@ body { margin: 0; padding: 0; }
     <section id="pacifique1">
         <h3>The Daily Telegraph</h3>
         <p>
+            <strong>Ile de Pâques :</strong></p>
+            <p><left><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_paques.jpg" alt=""  style="width:492px;height:340px;" /></span></left></p>
             Holmes and Watson head to The Daily Telegraph and place an ad to
             draw out the criminal. It reads: "To-night. Same hour. Same place.
             Two taps. Most vitally important. Your own safety at stake.
@@ -199,9 +234,13 @@ body { margin: 0; padding: 0; }
     <section id="amerique">
         <h3>Amérique</h3>
         <p>
+            <p><strong>Ile Mowée :</strong></p>
+            <p><left><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_iles Mowée.jpg" alt=""  style="width:492px;height:340px;" /></span></left></p>
             Holmes and Watson head to The Daily Telegraph and place an ad to
             draw out the criminal. It reads: "To-night. Same hour. Same place.
             Two taps. Most vitally important. Your own safety at stake.
+            <p><strong>Californie</strong></p>
+            <p><left><span class="image main"><img src="laperouse/Extrait_Laperouse-voyage-autour-du-monde_Californie.jpg" alt=""  style="width:326px;height:424px;" /></span></left></p>
             Pierrot." The trap works and Holmes catches the criminal: Colonel
             Valentine Walter, the brother of Woolwich Arsenal's chief. He
             confesses to working for Hugo Oberstein to obtain the submarine
@@ -566,6 +605,125 @@ body { margin: 0; padding: 0; }
             }
         }
     };
+
+    // Sélectionnez l'image et l'élément de plein écran par ID
+    var image = document.getElementById("imageToFullscreen");
+    var fullscreenDiv = document.getElementById("fullscreen");
+    var fullscreenImage = document.getElementById("fullscreenImage");
+
+        // Ajoutez un gestionnaire d'événement clic à l'image
+    image.addEventListener("click", function () {
+            // Remplacez la source de l'image en plein écran par celle de l'image cliquée
+        fullscreenImage.src = image.src;
+            // Affichez l'élément en plein écran
+        fullscreenDiv.style.display = "block";
+        });
+
+        // Ajoutez un gestionnaire d'événement clic pour fermer l'image en plein écran
+    fullscreenDiv.addEventListener("click", function () {
+        fullscreenDiv.style.display = "none";
+        });
+    
+    // Ajoutez un gestionnaire d'événements clavier pour détecter la touche "Échap"
+    window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            // Fermez l'image en plein écran lorsque "Échap" est pressée
+            fullscreenDiv.style.display = "none";
+            }
+        });
+
+    // Create a GeoJSON source with an empty lineString.
+    const geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [[0, 0]]
+                }
+            }
+        ]
+    };
+    
+    const speedFactor = 30; // number of frames per longitude degree
+    let animation; // to store and cancel the animation
+    let startTime = 0;
+    let progress = 0; // progress = timestamp - startTime
+    let resetTime = false; // indicator of whether time reset is needed for the animation
+    const pauseButton = document.getElementById('pause');
+    
+    map.on('load', () => {
+        map.addSource('line', {
+            'type': 'geojson',
+            'data': geojson
+        });
+    
+    // add the line which will be modified in the animation
+    map.addLayer({
+        'id': 'line-animation',
+        'type': 'line',
+        'source': 'line',
+        'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+        },
+        'paint': {
+            'line-color': '#ed6498',
+            'line-width': 5,
+            'line-opacity': 0.8
+        }
+    });
+    
+    startTime = performance.now();
+    
+    animateLine();
+    
+    // click the button to pause or play
+    pauseButton.addEventListener('click', () => {
+        pauseButton.classList.toggle('pause');
+        if (pauseButton.classList.contains('pause')) {
+            cancelAnimationFrame(animation);
+        } else {
+            resetTime = true;
+            animateLine();
+        }
+    });
+    
+    // reset startTime and progress once the tab loses or gains focus
+    // requestAnimationFrame also pauses on hidden tabs by default
+    document.addEventListener('visibilitychange', () => {
+        resetTime = true;
+    });
+    
+    // animated in a circle as a sine wave along the map.
+    function animateLine(timestamp) {
+        if (resetTime) {
+        // resume previous progress
+            startTime = performance.now() - progress;
+            resetTime = false;
+        } else {
+            progress = timestamp - startTime;
+        }
+        
+        // restart if it finishes a loop
+        if (progress > speedFactor * 360) {
+            startTime = timestamp;
+            geojson.features[0].geometry.coordinates = [];
+        } else {
+            const x = progress / speedFactor;
+            // draw a sine wave with some math.
+            const y = Math.sin((x * Math.PI) / 90) * 40;
+            // append new coordinates to the lineString
+            geojson.features[0].geometry.coordinates.push([x, y]);
+            // then update the map
+            map.getSource('line').setData(geojson);
+        }
+        // Request the next frame of the animation.
+        animation = requestAnimationFrame(animateLine);
+        }
+    });
+
 </script>
 
 </body>
