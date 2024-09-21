@@ -1,6 +1,6 @@
 var config = {
     style: 'mapbox://styles/josephbenita/clkckmnbo001u01pcesvo1p3h',
-    accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw',
+    accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNtMWNibjl5NTIweDAya3F4OXhoeWxmdGwifQ.-4Xs_BQ2ekVcJQNoPQyFOA',
     showMarkers: false,
     theme: 'light',
     title: 'Je pars pour faire le tour du monde',
