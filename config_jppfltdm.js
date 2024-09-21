@@ -45,7 +45,7 @@ var config = {
             ]
         },
         {
-            id: 'intro1bis',
+            id: '2',
             alignment: 'left',
             title: 'Global situation',
             image: '',
