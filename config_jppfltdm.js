@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/josephbenita/clkckmnbo001u01pcesvo1p3h',
+    style: 'mapbox://styles/josephbenita/cm1cimmwy00il01pcbtqk88o1',
     accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw',
     showMarkers: false,
     theme: 'light',
