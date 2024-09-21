@@ -1,5 +1,5 @@
 var config = {
-    style: 'mmapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
+    style: 'mapbox://styles/josephbenita/ckn65wzn700rg17rofkgal7i3',
     accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw',
     showMarkers: false,
     theme: 'light',
