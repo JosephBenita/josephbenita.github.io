@@ -59,8 +59,8 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'sahel-adm2-ch-proj',
-                    opacity: 0.6
+                    layer: 'cliwoc-all',
+                    opacity: 0.1
                 },
                 {
                     layer: 'ne-10m-time-zones-2',
@@ -69,7 +69,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'sahel-adm2-ch-proj',
+                    layer: 'cliwoc-all',
                     opacity: 0
                 },
                 {
