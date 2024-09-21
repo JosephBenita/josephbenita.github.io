@@ -1,6 +1,6 @@
 var config = {
     style: 'mapbox://styles/josephbenita/clkckmnbo001u01pcesvo1p3h',
-    accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNtMWNibjl5NTIweDAya3F4OXhoeWxmdGwifQ.-4Xs_BQ2ekVcJQNoPQyFOA',
+    accessToken: 'pk.eyJ1Ijoiam9zZXBoYmVuaXRhIiwiYSI6ImNrbjY1cGVpbzA1NGkzMm56ODBtYWFxdmYifQ.6TS9XHdQFp7eDSsiv70xiw',
     showMarkers: false,
     theme: 'light',
     title: 'Je pars pour faire le tour du monde',
@@ -13,7 +13,7 @@ var config = {
         {
             id: '1',
             alignment: 'right',
-            title: 'de Jean François de Galaup au Comte de Lapérouse',
+            title: 'De Jean François de Galaup au Comte de Lapérouse',
             image: '',
             imageCredit:'',
             description: '<left><span class="image main"><img src="images/asm_ad/Sarah.png" alt=""  style="width:100px;height:100px;" /></span></left><left><span class="image main"><img src="images/asm_ad/Manon.png" alt=""  style="width:100px;height:100px;" /></span></left>  <p>This tutorial demonstrates how to use <a href="https://github.com/mapbox/storytelling">Mapbox Storytelling</a> with our previous web mapping example. Here we will use Mapbox storytelling template to first, give an overview of the decrease in subway usage around the city, and second, zoom into three different locations that exemplify the diversity of conditions around New York.</p><p>We will use the <a href="https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html">previous web map displaying MTA turnstile data</a> as the basis for our story. In this process we will use Mapbox GL JS, as well as Intersection Observer and Scrollama as our main JavaScript libraries.</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In harum natus eos cum rem iure aperiam omnis distinctio illo quis, sunt nesciunt sint impedit deleniti dolor saepe necessitatibus eligendi aut?</p>',
