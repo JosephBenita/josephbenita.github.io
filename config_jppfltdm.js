@@ -52,8 +52,8 @@ var config = {
             imageCredit:'iMMAP',
             description: '<left><span class="image main"><img src="images/asm_ad/Figure_SVG.svg" alt=""  style="width:50%;height:50%;" /></span></left>',
             location: {
-                center: [4.53259, 16.49463],
-                zoom: 3.49,
+                center: [-37.19374, 26.71602],
+                zoom: 1.52,
                 pitch: 0,
                 bearing: 0.00
             },
