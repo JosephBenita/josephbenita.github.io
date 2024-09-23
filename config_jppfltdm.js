@@ -35,7 +35,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'cliwoc-all',
+                    layer: '',
                     opacity: 0
                 },
                 {
@@ -59,7 +59,7 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'cliwoc-all',
+                    layer: '',
                     opacity: 0.1
                 },
 
