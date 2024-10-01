@@ -33,12 +33,13 @@
             width: 100%;
             opacity: 60%;
             position: relative;
+            text-align: left;
             z-index: 5;
         }
         #header h1, #header h2, #header h3, #header p {
             margin: 0;
             padding: 2vh 2vw;
-            text-align: center;
+            text-align: left;
         }
         #footer {
             width: 100%;
@@ -68,7 +69,11 @@
         }
         .righty {
             width: 33vw;
-            margin-left: 62vw;
+            margin-left: 66vw;
+        }
+        .righty-large {
+            width: 60vw;
+            margin-left: 39vw;
         }
         .fully {
             width: 100%;
@@ -85,10 +90,10 @@
         .step {
             padding-bottom: 50vh;
             /* margin-bottom: 10vh; */
-            opacity: 0.2;
+            opacity: 0.1;
         }
         .step.active {
-            opacity: 0.75;
+            opacity: 0.85;
         }
 
         .step div {
@@ -319,7 +324,7 @@ map.on("load", function() {
                 const rotateNumber = map.getBearing();
                 map.rotateTo(rotateNumber + 90, {
                     duration: 24000, easing: function (t) {
-                        return t;
+                        return 't';
                     }
                 });
             });
