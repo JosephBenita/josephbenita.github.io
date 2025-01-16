@@ -31,18 +31,18 @@ var config = {
             alignment: 'right',
             title: 'A partir de Saint Géry',
             image: '',
-            description: '',
+            description: '<div class="audio-container"><audio controls><source src="laperouse/Bonne-maman.mp3" type="audio/mpeg"></audio></div>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
                 pitch: 0.00,
                 bearing: 0.00,
-                speed: 12000
+                speed: 1000
             },
             
             onChapterEnter: [
                 {
-                    layer: 'st-gery-parcelles',
+                    layer: 'st-gery',
                     opacity: 0.5
                 },
                 {
@@ -52,7 +52,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'st-gery-parcelles',
+                    layer: '',
                     opacity: 0
                 },
                 {
@@ -62,18 +62,102 @@ var config = {
             ]
         },
         {
-            id: '2',
+            id: '1c',
+            alignment: 'right',
+            title: '2',
+            image: '',
+            imageCredit:'',
+            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:154.56px;height:200px;" /></span></left><p>Jean François Gallaup, comte de Lapérouse</p>',
+            location: {
+                center: [1.78210, 43.83676],
+                zoom: 14.49,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+
+        },
+        {
+            id: '1d',
+            alignment: 'right',
+            title: '',
+            image: '',
+            imageCredit:'',
+            description: '<left><span class="image main"><img src="laperouse/cage.jpeg" alt=""  style="width:450px;height:600px;" /></span>',
+            location: {
+                center: [1.78210, 43.83676],
+                zoom: 14.49,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+
+        },
+        {
+            id: '1d',
+            alignment: 'full',
+            title: '',
+            image: '',
+            imageCredit:'',
+            description: '<center><span class="image main"><img src="laperouse/cadre_1.jpeg" alt=""  style="width:800px;height:608px;" /></span>',
+            location: {
+                center: [1.78210, 43.83676],
+                zoom: 14.49,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+
+        },
+        {
+            id: '1e',
+            alignment: 'right',
+            title: '2',
+            image: '',
+            imageCredit:'',
+            description: '<left><span class="image main"><img src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:177.14px;height:200px;" /></span> <span class="image main"><img src="laperouse/Clément de Rey.png" alt=""  style="width:156.07px;height:200px;" /></span></left><p>Mary O Kelly-Farrell, Marquise de St Géry & Clément de Rey, Marquis de St Géry</p>',
+            location: {
+                center: [1.78210, 43.83676],
+                zoom: 14.49,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'st-gery',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0
+                }
+            ]
+
+        },
+        {
+            id: '2a',
             alignment: 'right',
             title: '2',
             image: '',
             imageCredit:'',
             description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:154.56px;height:200px;" /></span></left><p>Texte</p>',
             location: {
-                center: [2.15140, 43.92827],
-                zoom: 15.26,
+                center: [2.22474, 43.93714],
+                zoom: 11.5,
                 pitch: 0,
                 bearing: 0.00,
-                speed: 0.3
+                speed: 0.35
             },
             onChapterEnter: [
                 {
@@ -81,13 +165,17 @@ var config = {
                     opacity: 1
                 },
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'albi-points-label',
+                    opacity: 1
+                },
+                {
+                    layer: 'albi-points',
+                    opacity: 0.8
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'albi-polygones',
+                    layer: '',
                     opacity: 0
                 },
                 {
@@ -97,22 +185,22 @@ var config = {
             ]
         },
         {
-            id: '3',
-            hidden:'true',
+            id: '2b',
+            hidden:'',
             alignment: 'right',
-            title: '3',
+            title: 'titre',
             image: '',
-            description: '',
+            description: '<left><span class="image main"><img src="laperouse/Marguerite de Rességuier.png" alt=""  style="width:136.93px;height:200px;" />  </span><span class="image main"><img src="laperouse/VJ de Galaup.png" alt=""  style="width:165.99px;height:200px;" /></span></left><p>texte</p>',
             location: {
                 center: [2.22474, 43.93714],
-                zoom: 11.91,
+                zoom: 11.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
             onChapterEnter: [
                 {
-                    layer: 'albi-polygones',
-                    opacity: 0.6
+                    layer: '',
+                    opacity: 0.9
                 },
                 {
                     layer: '',
@@ -121,7 +209,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: 'albi-polygones',
+                    layer: '',
                     opacity: 0
                 },
                 {
@@ -131,12 +219,47 @@ var config = {
             ]
         },
         {
-            id: '4',
+            id: '2c',
+            hidden:'',
+            alignment: 'right',
+            title: 'Charles-Henri-Louis d’Arsac De Ternay',
+            image: '',
+            description: '<left><span class="image main"><img src="laperouse/Chevalierdeternay.jpeg" alt=""  style="width:273.66px;height:300px;" /></span></left><p>1723-1780</p>',
+            location: {
+                center: [2.22474, 43.93714],
+                zoom: 11.5,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.9
+                },
+                {
+                    layer: '',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: '',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0
+                }
+            ]
+        },
+        
+        {
+            id: '3',
             alignment: 'left',
-            title: '4',
+            title: 'A 15 ans, départ pour Brest',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="images/asm_ad/Figure_SVG.svg" alt=""  style="width:50%;height:50%;" /></span></left>',
+            description: '<span class="flourish-embed flourish-hierarchy" data-src="visualisation/16230863"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/16230863/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></span>',
             location: {
                 center: [0.96581, 47.11029],
                 zoom: 6.42,
@@ -145,12 +268,16 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.1
+                    layer: 'albi-brest',
+                    opacity: 0.9
                 },
 
             ],
             onChapterExit: [
+                {
+                    layer: '',
+                    opacity: 0
+                },
                 {
                     layer: '',
                     opacity: 0
@@ -182,11 +309,135 @@ var config = {
                     layer: 'brest-ligne',
                     opacity: 0
                 },
+                {
+                    layer: 'albi-brest',
+                    opacity: 0
+                },
+                {
+                    layer: 'albi-points',
+                    opacity: 0
+                },
+                {
+                    layer: 'albi-points-label',
+                    opacity: 0
+                },
             ]           
         },
         {
-            id: '6',
+            id: '7a',
+            hidden:'',
+            alignment: 'right',
+            title: 'Avant la guerre de 7 ans',
+            image: '',
+            description: '',
+            location: {
+                center: [-45.23109, 25.81440],
+                zoom: 1.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'world-1750',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: '',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0
+                },
+            ]
+        },
+        {
+            id: '7b',
             hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [-45.23109, 25.81440],
+                zoom: 1.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'EN-1750-1763',
+                    opacity: 1
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'EN-1750-1763',
+                    opacity: 0
+                },
+            ]
+        },
+        {
+            id: '7c',
+            hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [-45.23109, 25.81440],
+                zoom: 1.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'FR-1750-1763',
+                    opacity: 1
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'world-1750',
+                    opacity: 0
+                },
+                {
+                    layer: 'FR-1750-1763',
+                    opacity: 0
+                },
+            ]
+        },
+        {
+            id: '8',
+            hidden:'',
+            alignment: 'right',
+            title: 'Après la guerre de 7 ans',
+            image: '',
+            description: '',
+            location: {
+                center: [-45.23109, 25.81440],
+                zoom: 1.93,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'world-1763',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'world-1763',
+                    opacity: 0
+                },
+            ]
+        },
+        {
+            id: '9',
+            hidden:'',
             alignment: 'right',
             title: 'Front Ouest',
             image: '',
@@ -218,34 +469,9 @@ var config = {
                 },
             ]  
         },
+
         {
-            id: '7',
-            hidden:'true',
-            alignment: 'right',
-            title: '7',
-            image: '',
-            description: '',
-            location: {
-                center: [-45.23109, 25.81440],
-                zoom: 1.93,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-            onChapterEnter: [
-                {
-                    layer: 'cliwoc-all',
-                    opacity: 0.5
-                },
-            ],
-            onChapterExit: [
-                {
-                    layer: 'cliwoc-all',
-                    opacity: 0
-                },
-            ]
-        },
-        {
-            id: '8',
+            id: '10',
             hidden:'true',
             alignment: 'right',
             title: '8',
@@ -259,7 +485,7 @@ var config = {
             },
         },
         {
-            id: '9',
+            id: '11',
             hidden:'true',
             alignment: 'right',
             title: '9',
@@ -273,62 +499,86 @@ var config = {
             },
         },
         {
-            id: '10',
+            id: '12',
             hidden:'true',
             alignment: 'right',
             title: '10',
             image: '',
             description: '',
             location: {
-                center: [2.72839, 17.08936],
-                zoom: 2.25,
+                center: [-40.57421, -6.48104],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00
             },
+            onChapterEnter: [
+                {
+                    layer: '944-1',
+                    opacity: 0.5
+                },
+            ]
         },
         {
-            id: '11',
+            id: '13',
             hidden:'true',
             alignment: 'right',
             title: '11',
             image: '',
             description: '',
             location: {
-                center: [2.72839, 17.08936],
-                zoom: 2.25,
+                center: [-145.42007, 0],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00
             },
+            onChapterEnter: [
+                {
+                    layer: '944-2',
+                    opacity: 0.5
+                },
+            ]
         },        {
-            id: '12',
+            id: '14',
             hidden:'true',
             alignment: 'right',
             title: '12',
             image: '',
             description: '',
             location: {
-                center: [2.72839, 17.08936],
-                zoom: 2.25,
+                center: [-145.42007, 6.48104],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00
             },
+            onChapterEnter: [
+                {
+                    layer: '944-3',
+                    opacity: 0.5
+                },
+            ]
         },
         {
-            id: '13',
+            id: '15',
             hidden:'true',
             alignment: 'right',
             title: '13',
             image: '',
             description: '',
             location: {
-                center: [2.72839, 17.08936],
-                zoom: 2.25,
+                center: [-145.42007, 6.48104],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00
             },
+            onChapterEnter: [
+                {
+                    layer: '944-4',
+                    opacity: 0.5
+                },
+            ]
         },
         {
-            id: '14',
+            id: '16',
             alignment: 'right',
             title: 'Sources',
             image: '',
@@ -339,6 +589,53 @@ var config = {
                 pitch: 0.00,
                 bearing: 0.00
             },
-        },            
+        },
+        {
+            id: '17a',
+            hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description:'',
+            location: {
+                center: [166.88165, -11.65377],
+                zoom: 10.56,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+        },
+        {
+            id: '17b',
+            alignment: 'right',
+            title: 'et des récifs',
+            image: '',
+            description:'',
+            location: {
+                center: [166.88165, -11.65377],
+                zoom: 10.56,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'vanikoro-reef',
+                    opacity: 0.5
+                },
+                {
+                    layer: 'vanikoro-reef-line',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'vanikoro-reef',
+                    opacity: 0
+                },
+                {
+                    layer: 'vanikoro-reef-line',
+                    opacity: 0
+                },
+            ]  
+        },                 
     ]
 };
