@@ -11,7 +11,7 @@ var config = {
     footer: 'Joseph Benita - <a href="mailto:joseph@benita.cc">joseph@benita.cc</a>',
     chapters: [
         {
-            id: '1',
+            id: '110',
             hidden:'false',
             alignment: 'right',
             title: '1',
@@ -27,7 +27,7 @@ var config = {
 
         },
         {
-            id: '1b',
+            id: '111',
             alignment: 'right',
             title: 'A partir de Saint Géry',
             image: '',
@@ -62,12 +62,12 @@ var config = {
             ]
         },
         {
-            id: '1c',
+            id: '112',
             alignment: 'right',
-            title: '2',
+            title: '',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:154.56px;height:200px;" /></span></left><p>Jean François Gallaup, comte de Lapérouse</p>',
+            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.84px;height:300px;" /></span></left><p>Jean François de Galaup, comte de Lapérouse</p>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -78,7 +78,7 @@ var config = {
 
         },
         {
-            id: '1d',
+            id: '113',
             alignment: 'right',
             title: '',
             image: '',
@@ -94,12 +94,12 @@ var config = {
 
         },
         {
-            id: '1d',
+            id: '114',
             alignment: 'full',
             title: '',
             image: '',
             imageCredit:'',
-            description: '<center><span class="image main"><img src="laperouse/cadre_1.jpeg" alt=""  style="width:800px;height:608px;" /></span>',
+            description: '<center><span class="image main"><img src="laperouse/tableau.png" alt=""  style="width:800px;height:608px;" /></span>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -110,12 +110,12 @@ var config = {
 
         },
         {
-            id: '1e',
+            id: '115',
             alignment: 'right',
-            title: '2',
+            title: 'Les Marquis de St Géry',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/Marie-Christine Rey sans cadre.png" alt=""  style="width:177.14px;height:200px;" /></span> <span class="image main"><img src="laperouse/Clément de Rey.png" alt=""  style="width:156.07px;height:200px;" /></span></left><p>Mary O Kelly-Farrell, Marquise de St Géry & Clément de Rey, Marquis de St Géry</p>',
+            description: '<center><span class="image main"><img src="laperouse/marquis.e.png" alt=""  style="width:359.8px;height:300px;"/></span><p>Clément de Rey & Mary O Kelly-Farrell</p>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -146,12 +146,27 @@ var config = {
 
         },
         {
-            id: '2a',
+            id: '116',
             alignment: 'right',
-            title: '2',
+            title: '',
+            image: 'laperouse/Lettre de LP_extrait.png',
+            imageCredit:'',
+            description: '',
+            location: {
+                center: [1.78210, 43.83676],
+                zoom: 14.49,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+        },
+        {
+            id: '121',
+            alignment: 'right',
+            title: 'Jean François de Galaup',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:154.56px;height:200px;" /></span></left><p>Texte</p>',
+            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.84px;height:300px;" /></span></left><p>Naissance 23 aout 1741 à Albi. De ces 9 à 15 ans au collège des jésuites d&apos;Albi</p>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -185,76 +200,65 @@ var config = {
             ]
         },
         {
-            id: '2b',
+            id: '122',
+            alignment: 'full',
+            title: 'de Galaup et de Rey',
+            image: '',
+            imageCredit:'',
+            description: '<center><span class="image main"><img src="laperouse/arbre_gif.gif" alt=""  style="width:987px;height:400px;" /></span></center><p>texte</p>',
+            location: {
+                center: [2.22474, 43.93714],
+                zoom: 11.5,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+        },
+        {
+            id: '123',
+            alignment: 'full',
+            title: 'En comparaison pour la famille O&apos;Byrne',
+            image: '',
+            imageCredit:'',
+            description: '<center><span class="image main"><img src="laperouse/Arbre_OByrne.png" alt=""  style="width:987px;height:400px;" /></span></center><p>texte</p>',
+            location: {
+                center: [2.22474, 43.93714],
+                zoom: 11.5,
+                pitch: 0,
+                bearing: 0.00,
+                speed: 0.35
+            },
+        },
+        {
+            id: '124',
             hidden:'',
             alignment: 'right',
-            title: 'titre',
+            title: 'Ses parents',
             image: '',
-            description: '<left><span class="image main"><img src="laperouse/Marguerite de Rességuier.png" alt=""  style="width:136.93px;height:200px;" />  </span><span class="image main"><img src="laperouse/VJ de Galaup.png" alt=""  style="width:165.99px;height:200px;" /></span></left><p>texte</p>',
+            description: '<right><span class="image main"><img src="laperouse/parents.png" alt=""style="width:415.2px;height:300px;"/></span></right><p>Victor Joseph de Galaup & Marguerite de Rességuier</p>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
-            onChapterEnter: [
-                {
-                    layer: '',
-                    opacity: 0.9
-                },
-                {
-                    layer: '',
-                    opacity: 1
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: '',
-                    opacity: 0
-                },
-                {
-                    layer: '',
-                    opacity: 0
-                }
-            ]
         },
         {
-            id: '2c',
+            id: '125',
             hidden:'',
             alignment: 'right',
-            title: 'Charles-Henri-Louis d’Arsac De Ternay',
+            title: 'Des tuteurs importants',
             image: '',
-            description: '<left><span class="image main"><img src="laperouse/Chevalierdeternay.jpeg" alt=""  style="width:273.66px;height:300px;" /></span></left><p>1723-1780</p>',
+            description: '<left><span class="image main"><img src="laperouse/tuteurs.png" alt=""  style="width:538.8px;height:300px;" />  </span></left><p>Charles Eugène Gabriel de La Croix de Castries (1727-1801)<a href="https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_La_Croix_de_Castries" target="_blank">Wiki</a></p><p>Charles-Henri-Louis d&apos;Arsac de Ternay (1723-1780)<a href="https://fr.wikipedia.org/wiki/Charles-Henri-Louis_d%27Arsac_de_Ternay" target="_blank">Wiki</a></p>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
                 pitch: 0.00,
                 bearing: 0.00
             },
-            onChapterEnter: [
-                {
-                    layer: '',
-                    opacity: 0.9
-                },
-                {
-                    layer: '',
-                    opacity: 1
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: '',
-                    opacity: 0
-                },
-                {
-                    layer: '',
-                    opacity: 0
-                }
-            ]
         },
-        
         {
-            id: '3',
+            id: '211',
             alignment: 'left',
             title: 'A 15 ans, départ pour Brest',
             image: '',
@@ -271,7 +275,6 @@ var config = {
                     layer: 'albi-brest',
                     opacity: 0.9
                 },
-
             ],
             onChapterExit: [
                 {
@@ -286,15 +289,15 @@ var config = {
             ]
         },
         {
-            id: '5',
+            id: '212',
             alignment: 'left',
-            title: 'Brest',
-            image: '',
+            title: 'Brest, le séminaire de la Marine',
+            image: 'laperouse/Brest_1777.png',
             imageCredit:'',
-            description: '<iframe width="560" height="315" src="https://www.youtube.com/embed/le-e37ZMck8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            description: '',
             location: {
-                center: [-4.55029, 48.38998],
-                zoom: 12.44,
+                center: [-4.54014, 48.38893],
+                zoom: 12.80,
                 pitch: 0.00,
                 bearing: 0.00
             },
@@ -324,7 +327,7 @@ var config = {
             ]           
         },
         {
-            id: '7a',
+            id: '312',
             hidden:'',
             alignment: 'right',
             title: 'Avant la guerre de 7 ans',
@@ -354,7 +357,7 @@ var config = {
             ]
         },
         {
-            id: '7b',
+            id: '313',
             hidden:'true',
             alignment: 'right',
             title: '',
@@ -380,7 +383,7 @@ var config = {
             ]
         },
         {
-            id: '7c',
+            id: '314',
             hidden:'true',
             alignment: 'right',
             title: '',
@@ -410,7 +413,7 @@ var config = {
             ]
         },
         {
-            id: '8',
+            id: '331',
             hidden:'',
             alignment: 'right',
             title: 'Après la guerre de 7 ans',
@@ -436,9 +439,9 @@ var config = {
             ]
         },
         {
-            id: '9',
+            id: '411',
             hidden:'',
-            alignment: 'right',
+            alignment: 'left',
             title: 'Front Ouest',
             image: '',
             description: '',
