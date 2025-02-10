@@ -12,9 +12,9 @@ var config = {
     chapters: [
         {
             id: '110',
-            hidden:'false',
+            hidden:'true',
             alignment: 'right',
-            title: '1',
+            title: '110',
             image: '',
             description: '',
             location: {
@@ -29,9 +29,9 @@ var config = {
         {
             id: '111',
             alignment: 'right',
-            title: 'A partir de Saint Géry',
+            title: '111',
             image: '',
-            description: '<div class="audio-container"><audio controls><source src="laperouse/Bonne-maman.mp3" type="audio/mpeg"></audio></div>',
+            description: '<div class="audio-container"><audio controls><source src="laperouse/Bonne-maman.mp3" type="audio/mpeg"></audio></div><p>À partir de Saint Géry, visite de Bonne Maman, aout 1988</p>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -64,10 +64,10 @@ var config = {
         {
             id: '112',
             alignment: 'right',
-            title: '',
+            title: '112',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.84px;height:300px;" /></span></left><p>Jean François de Galaup, comte de Lapérouse</p>',
+            description: '<center><span class="image main"><img src="laperouse/laperouse_sign.png" alt=""  style="width:238.8px;height:300px;" /></span><p>Jean François de Galaup, comte de Lapérouse</p></center>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -80,10 +80,10 @@ var config = {
         {
             id: '113',
             alignment: 'right',
-            title: '',
+            title: '113',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/cage.jpeg" alt=""  style="width:450px;height:600px;" /></span>',
+            description: '<center><span class="image main"><img src="laperouse/cage.jpeg" alt=""  style="width:450px;height:600px;" /></span>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -96,7 +96,7 @@ var config = {
         {
             id: '114',
             alignment: 'full',
-            title: '',
+            title: '114',
             image: '',
             imageCredit:'',
             description: '<center><span class="image main"><img src="laperouse/tableau.png" alt=""  style="width:800px;height:608px;" /></span>',
@@ -112,10 +112,10 @@ var config = {
         {
             id: '115',
             alignment: 'right',
-            title: 'Les Marquis de St Géry',
+            title: '115',
             image: '',
             imageCredit:'',
-            description: '<center><span class="image main"><img src="laperouse/marquis.e.png" alt=""  style="width:359.8px;height:300px;"/></span><p>Clément de Rey & Mary O Kelly-Farrell</p>',
+            description: '<center><span class="image main"><img src="laperouse/marquis.e.png" alt=""  style="width:359.8px;height:300px;"/></span><p>Clément de Rey & Mary O\'Kelly-Farrell</p><p>Marquis.e de St Géry</p>',
             location: {
                 center: [1.78210, 43.83676],
                 zoom: 14.49,
@@ -148,7 +148,7 @@ var config = {
         {
             id: '116',
             alignment: 'right',
-            title: '',
+            title: '116',
             image: 'laperouse/Lettre de LP_extrait.png',
             imageCredit:'',
             description: '',
@@ -163,10 +163,10 @@ var config = {
         {
             id: '121',
             alignment: 'right',
-            title: 'Jean François de Galaup',
+            title: '121',
             image: '',
             imageCredit:'',
-            description: '<left><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.84px;height:300px;" /></span></left><p>Naissance 23 aout 1741 à Albi. De ces 9 à 15 ans au collège des jésuites d&apos;Albi</p>',
+            description: '<center><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.8px;height:300px;" /></span><p>Jean François de Galaup</p><p>Naissance 23 aout 1741 à Albi</p</center>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -202,10 +202,10 @@ var config = {
         {
             id: '122',
             alignment: 'full',
-            title: 'de Galaup et de Rey',
+            title: '122',
             image: '',
             imageCredit:'',
-            description: '<center><span class="image main"><img src="laperouse/arbre_gif.gif" alt=""  style="width:987px;height:400px;" /></span></center><p>texte</p>',
+            description: '<center><span class="image main"><img src="laperouse/Arbre_Lapérouse.png" alt=""  style="width:987px;height:400px;" /></span></center><p>Clément et Jean François sont cousins de 3ème degré</p>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -217,10 +217,10 @@ var config = {
         {
             id: '123',
             alignment: 'full',
-            title: 'En comparaison pour la famille O&apos;Byrne',
+            title: '123',
             image: '',
             imageCredit:'',
-            description: '<center><span class="image main"><img src="laperouse/Arbre_OByrne.png" alt=""  style="width:987px;height:400px;" /></span></center><p>texte</p>',
+            description: '<center><span class="image main"><img src="laperouse/Arbre_OByrne.png" alt=""  style="width:987px;height:400px;" /></span></center><p>De la même manière que James et Alexandre</p>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -233,9 +233,9 @@ var config = {
             id: '124',
             hidden:'',
             alignment: 'right',
-            title: 'Ses parents',
+            title: '124',
             image: '',
-            description: '<right><span class="image main"><img src="laperouse/parents.png" alt=""style="width:415.2px;height:300px;"/></span></right><p>Victor Joseph de Galaup & Marguerite de Rességuier</p>',
+            description: '<center><span class="image main"><img src="laperouse/parents.png" alt=""style="width:415.2px;height:300px;"/></span><p>Ses parents</p><p>Victor Joseph de Galaup & Marguerite de Rességuier</p></center>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -247,9 +247,9 @@ var config = {
             id: '125',
             hidden:'',
             alignment: 'right',
-            title: 'Des tuteurs importants',
+            title: '125',
             image: '',
-            description: '<left><span class="image main"><img src="laperouse/tuteurs.png" alt=""  style="width:538.8px;height:300px;" />  </span></left><p>Charles Eugène Gabriel de La Croix de Castries (1727-1801)<a href="https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_La_Croix_de_Castries" target="_blank">Wiki</a></p><p>Charles-Henri-Louis d&apos;Arsac de Ternay (1723-1780)<a href="https://fr.wikipedia.org/wiki/Charles-Henri-Louis_d%27Arsac_de_Ternay" target="_blank">Wiki</a></p>',
+            description: '<center><span class="image main"><img src="laperouse/tuteurs.png" alt=""  style="width:538.8px;height:300px;" /></span><p>Des tuteurs qui vont changer sa vie</p><p>Charles Eugène Gabriel de La Croix de Castries (1727-1801) - fiche <a href="https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_La_Croix_de_Castries" target="_blank">Wikipédia</a></p><p>Charles-Henri-Louis d&apos;Arsac de Ternay (1723-1780) - fiche <a href="https://fr.wikipedia.org/wiki/Charles-Henri-Louis_d%27Arsac_de_Ternay" target="_blank">Wikipédia</a></p></center>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -260,10 +260,10 @@ var config = {
         {
             id: '211',
             alignment: 'left',
-            title: 'A 15 ans, départ pour Brest',
+            title: '211',
             image: '',
             imageCredit:'',
-            description: '<span class="flourish-embed flourish-hierarchy" data-src="visualisation/16230863"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/16230863/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></span>',
+            description: '<p>A 15 ans, départ pour Brest</p><span class="flourish-embed flourish-hierarchy" data-src="visualisation/16230863"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/16230863/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></span>',
             location: {
                 center: [0.96581, 47.11029],
                 zoom: 6.42,
@@ -275,14 +275,22 @@ var config = {
                     layer: 'albi-brest',
                     opacity: 0.9
                 },
+                {
+                    layer: 'brest',
+                    opacity: 0.9
+                },
+                {
+                    layer: 'brest-label',
+                    opacity: 0.9
+                },
             ],
             onChapterExit: [
                 {
-                    layer: '',
+                    layer: 'brest',
                     opacity: 0
                 },
                 {
-                    layer: '',
+                    layer: 'brest-label',
                     opacity: 0
                 },
 
@@ -291,10 +299,10 @@ var config = {
         {
             id: '212',
             alignment: 'left',
-            title: 'Brest, le séminaire de la Marine',
+            title: '212',
             image: 'laperouse/Brest_1777.png',
             imageCredit:'',
-            description: '',
+            description: '<p>Brest, le séminaire de la Marine</p>',
             location: {
                 center: [-4.54014, 48.38893],
                 zoom: 12.80,
@@ -304,7 +312,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'brest-ligne',
-                    opacity: 0.5
+                    opacity: 0.9
                 },
             ],
             onChapterExit: [
@@ -327,14 +335,14 @@ var config = {
             ]           
         },
         {
-            id: '312',
+            id: '311',
             hidden:'',
             alignment: 'right',
-            title: 'Avant la guerre de 7 ans',
+            title: '311',
             image: '',
-            description: '',
+            description: '<p>Avant la guerre de 7 ans</p>',
             location: {
-                center: [-45.23109, 25.81440],
+                center: [-0, 25.81440],
                 zoom: 1.93,
                 pitch: 0.00,
                 bearing: 0.00
@@ -347,7 +355,7 @@ var config = {
             ],
             onChapterExit: [
                 {
-                    layer: '',
+                    layer: 'world-1750',
                     opacity: 0
                 },
                 {
@@ -357,14 +365,14 @@ var config = {
             ]
         },
         {
-            id: '313',
-            hidden:'true',
+            id: '312',
+            hidden:'',
             alignment: 'right',
-            title: '',
+            title: '312',
             image: '',
-            description: '',
+            description: '<p>La flotte anglaise entre 1750 et 1763</p>',
             location: {
-                center: [-45.23109, 25.81440],
+                center: [0, 25.81440],
                 zoom: 1.93,
                 pitch: 0.00,
                 bearing: 0.00
@@ -383,14 +391,14 @@ var config = {
             ]
         },
         {
-            id: '314',
-            hidden:'true',
+            id: '313',
+            hidden:'',
             alignment: 'right',
-            title: '',
+            title: '313',
             image: '',
-            description: '',
+            description: '<p>En comparaison avec la flotte française sur la même période</p>',
             location: {
-                center: [-45.23109, 25.81440],
+                center: [0, 25.81440],
                 zoom: 1.93,
                 pitch: 0.00,
                 bearing: 0.00
@@ -413,12 +421,42 @@ var config = {
             ]
         },
         {
+            id: '321',
+            hidden:'',
+            alignment: 'left',
+            title: '321',
+            image: 'laperouse/quiberon.png',
+            description: '1759, la bataille des Cardinaux',
+            location: {
+                center: [-6.68255, 48.86206],
+                zoom: 6,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+            onChapterEnter: [
+                {
+                    layer: 'quiberon',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'quiberon',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0
+                },
+            ]
+        },
+        {
             id: '331',
             hidden:'',
             alignment: 'right',
-            title: 'Après la guerre de 7 ans',
+            title: '331',
             image: '',
-            description: '',
+            description: 'Après la guerre de 7 ans',
             location: {
                 center: [-45.23109, 25.81440],
                 zoom: 1.93,
@@ -442,9 +480,9 @@ var config = {
             id: '411',
             hidden:'',
             alignment: 'left',
-            title: 'Front Ouest',
+            title: '411',
             image: '',
-            description: '',
+            description: 'Front Ouest',
             location: {
                 center: [-5.83602, 46.15892],
                 zoom: 6.08,
@@ -474,150 +512,646 @@ var config = {
         },
 
         {
-            id: '10',
-            hidden:'true',
-            alignment: 'right',
-            title: '8',
+            id: '421',
+            hidden:'',
+            alignment: 'left',
+            title: '421',
             image: '',
-            description: '',
+            description: 'Océan indien 1/2',
             location: {
-                center: [-45.23109, 25.81440],
-                zoom: 1.93,
+                center: [40, -7],
+                zoom: 3,
                 pitch: 0.00,
                 bearing: 0.00
             },
         },
         {
-            id: '11',
-            hidden:'true',
-            alignment: 'right',
-            title: '9',
+            id: '422',
+            hidden:'',
+            alignment: 'left',
+            title: '422',
             image: '',
-            description: '',
+            description: 'Océan indien 2/2',
             location: {
-                center: [53.86627, 15.36318],
-                zoom: 1.93,
+                center: [40, -7],
+                zoom: 3,
                 pitch: 0.00,
                 bearing: 0.00
             },
         },
         {
-            id: '12',
-            hidden:'true',
+            id: '423',
+            hidden:'',
             alignment: 'right',
-            title: '10',
+            title: '423',
+            image: '',
+            description: '<center><span class="image main"><img src="laperouse/Eleonore_Broudou.png" alt=""  style="width:220.1px;height:300px;" /></span><p>Eléonore Broudou, née à Nantes le 15 mai 1755</p><p>Fiche de l\'<a href="https://blogs.univ-jfc.fr/projetlaperouse/marin-et-soldat/dans-locean-indien/eleonore-broudou/" target="_blank">INU Champollion</a></p></center>',
+            location: {
+                center: [57.77373, -20.25468],
+                zoom: 9.90,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '424',
+            hidden:'',
+            alignment: 'right',
+            title: '424',
+            image: '',
+            description: 'Retour en France',
+            location: {
+                center: [5, 46.50441],
+                zoom: 5.24,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '511',
+            hidden:'',
+            alignment: 'right',
+            title: '511',
+            image: '',
+            description: 'La guerre d\'indépendance des Etats-Unis',
+            location: {
+                center: [5, 46.50441],
+                zoom: 5.24,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '512',
+            hidden:'',
+            alignment: 'right',
+            title: '512',
             image: '',
             description: '',
             location: {
-                center: [-40.57421, -6.48104],
+                center: [-25, 40],
+                zoom: 3,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },        
+        {
+            id: '521',
+            hidden:'',
+            alignment: 'right',
+            title: '521',
+            image: '',
+            description: '',
+            location: {
+                center: [-25, 40],
+                zoom: 3,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '522',
+            hidden:'',
+            alignment: 'right',
+            title: '522',
+            image: '',
+            description: '',
+            location: {
+                center: [-25, 40],
+                zoom: 3,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '523',
+            hidden:'',
+            alignment: 'right',
+            title: '523',
+            image: '',
+            description: '',
+            location: {
+                center: [-60, 60],
+                zoom: 3.9,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '611',
+            hidden:'',
+            alignment: 'right',
+            title: '611',
+            image: 'laperouse/Louis 16-Lapérouse.jpg',
+            description: 'La préparation au départ 1/3',
+            location: {
+                center: [5, 46.50441],
+                zoom: 5.24,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:1
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '612',
+            hidden:'',
+            alignment: 'right',
+            title: '612',
+            image: 'laperouse/boussole.png',
+            description: 'La préparation au départ 2/3',
+            location: {
+                center: [5, 46.50441],
+                zoom: 5.24,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '613',
+            hidden:'',
+            alignment: 'right',
+            title: '613',
+            image: 'laperouse/médaille.png',
+            description: 'La préparation au départ 3/3',
+            location: {
+                center: [5, 46.50441],
+                zoom: 5.24,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:0.35
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },
+        {
+            id: '711',
+            hidden:'',
+            alignment: 'right',
+            title: '711',
+            image: '',
+            description: 'Brest - Conception',
+            location: {
+                center: [-30, 0],
                 zoom: 2,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:10.35
             },
             onChapterEnter: [
                 {
                     layer: '944-1',
-                    opacity: 0.5
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp1',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp1-label',
+                    opacity: 1
                 },
             ]
         },
         {
-            id: '13',
-            hidden:'true',
+            id: '721',
+            hidden:'',
             alignment: 'right',
-            title: '11',
+            title: '721',
             image: '',
-            description: '',
+            description: 'Conception - Monterey',
             location: {
-                center: [-145.42007, 0],
+                center: [-100, 0],
                 zoom: 2,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:0.35
             },
             onChapterEnter: [
                 {
                     layer: '944-2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 1
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: '944-2',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 0
+                },
+            ]  
+        },
+        {
+            id: '722',
+            hidden:'',
+            alignment: 'left',
+            title: '722',
+            image: '',
+            description: '<center><span class="image main"><img src="laperouse/paques.png" alt=""  style="width:554.9px;height:400px;" /></span><p>Relevé de l\'île de Pâques</p>',
+            location: {
+                center: [-109.49337, -27.11727],
+                zoom: 11,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10.35
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: '944-2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 1
+                },
+            ]  
+        },
+        {
+            id: '723',
+            hidden:'true',
+            alignment: 'full',
+            title: '723',
+            image: '',
+            description: '<center><span class="image main"><img src="laperouse/portdesfrançais.png" alt=""  style="width:882.1px;height:600px;" /></span><p>Drame de navigation au Port des français, 13 juillet 1786</p>',
+            location: {
+                center: [-134.10233, 52.89148],
+                zoom: 4.41,
+                pitch: 70.00,
+                bearing: 145,
+                speed:5
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
                     opacity: 0.5
                 },
             ]
-        },        {
-            id: '14',
-            hidden:'true',
-            alignment: 'right',
-            title: '12',
+        },  
+        {
+            id: '723',
+            hidden:'',
+            alignment: 'full',
+            title: '723',
             image: '',
-            description: '',
+            description: '<center><span class="image main"><img src="laperouse/portdesfrançais.png" alt=""  style="width:882.1px;height:600px;" /></span><p>Drame de navigation au Port des français, 13 juillet 1786</p>',
             location: {
-                center: [-145.42007, 6.48104],
+                center: [-134.10233, 52.89148],
+                zoom: 4.41,
+                pitch: 70.00,
+                bearing: 145,
+                speed:5
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ]
+        },                
+        {
+            id: '731',
+            hidden:'',
+            alignment: 'right',
+            title: '731',
+            image: '',
+            description: 'Monterey - St Pierre St Paul',
+            location: {
+                center: [-145, 0],
                 zoom: 2,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:0.35
             },
             onChapterEnter: [
                 {
                     layer: '944-3',
-                    opacity: 0.5
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp3',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp3-label',
+                    opacity: 1
                 },
             ]
         },
         {
-            id: '15',
-            hidden:'true',
+            id: '732',
+            hidden:'',
             alignment: 'right',
-            title: '13',
+            title: '732',
             image: '',
-            description: '',
+            description: 'Le détroit de Tartarie',
             location: {
-                center: [-145.42007, 6.48104],
+                center: [155, 50],
+                zoom: 4,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10.35
+            },
+            onChapterEnter: [
+                {
+                    layer: 'poi-exp3',
+                    opacity: 0
+                },
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'poi-exp3',
+                    opacity: 0.6
+                },
+            ]
+        },
+        {
+            id: '733',
+            hidden:'',
+            alignment: 'right',
+            title: '733',
+            image: '',
+            description: '<center><span class="image main"><img src="laperouse/lesseps.png" alt=""  style="width:177.8px;height:300px;" /></span><p>Le voyage retour de Lesseps<p>',
+            location: {
+                center: [120, 30],
+                zoom: 2.24,
+                pitch: 8.00,
+                bearing: 0,
+                speed:10.35
+            },
+            onChapterEnter: [
+                {
+                    layer: 'lesseps',
+                    opacity: 0.9
+                },
+                {
+                    layer: '944-1',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp1',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp1-label',
+                    opacity: 0
+                },
+                {
+                    layer: '944-2',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 0
+                },
+                {
+                    layer: '944-3',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp3',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp3-label',
+                    opacity: 0
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'lesseps',
+                    opacity: 0
+                },
+                {
+                    layer: '944-1',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp1',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp1-label',
+                    opacity: ''
+                },
+                {
+                    layer: '944-2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: ''
+                },
+                {
+                    layer: '944-3',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp3',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp3-label',
+                    opacity: ''
+                },
+
+            ]
+        },
+        {
+            id: '741',
+            hidden:'',
+            alignment: 'right',
+            title: '741',
+            image: '',
+            description: 'St Pierre St Paul - Botany Bay',
+            location: {
+                center: [-145, 0],
                 zoom: 2,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:10.35
             },
             onChapterEnter: [
                 {
                     layer: '944-4',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp4',
+                    opacity: 0.6
+                },
+                {
+                    layer: 'poi-exp4-label',
+                    opacity: 1
+                },
+            ]
+        },
+        {
+            id: '751',
+            hidden:'',
+            alignment: 'right',
+            title: '751',
+            image: '',
+            description: 'Après Botany bay',
+            location: {
+                center: [175, -19.99140],
+                zoom: 3,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10.35
+            },
+            onChapterEnter: [
+                {
+                    layer: 'epaves',
+                    stroke: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'epaves',
+                    stroke: 0
+                },
+            ]
+        },
+        {
+            id: '752',
+            hidden:'',
+            alignment: 'right',
+            title: '752',
+            image: '',
+            description:'Jusqu\'à Vanikoro',
+            location: {
+                center: [167, -11.65377],
+                zoom: 10.56,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:0.35
+            },
+            onChapterEnter: [
+                {
+                    layer: 'trajet-vanikoro',
+                    opacity: 0.5
+                },
+                {
+                    layer: 'poi-exp5',
                     opacity: 0.5
                 },
             ]
         },
         {
-            id: '16',
-            alignment: 'right',
-            title: 'Sources',
-            image: '',
-            description:'<left><span class="image main"><img src="laperouse/laperouse.jpg" alt=""  style="width:117.1px;height:200px;" /> </span></left><left><span class="image main"><img src="laperouse/expedition.jpg" alt=""  style="width:157.8px;height:200px;" /></span></left> <span class="image main"><img src="laperouse/memoires.jpg" alt=""  style="width:131.58px;height:200px;" /></span></left>',
-            location: {
-                center: [-145.42007, 6.48104],
-                zoom: 2,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-        },
-        {
-            id: '17a',
+            id: '753',
             hidden:'true',
             alignment: 'right',
-            title: '',
+            title: '753',
             image: '',
-            description:'',
+            description:'et des récifs',
             location: {
-                center: [166.88165, -11.65377],
+                center: [167, -11.65377],
                 zoom: 10.56,
                 pitch: 0.00,
-                bearing: 0.00
-            },
-        },
-        {
-            id: '17b',
-            alignment: 'right',
-            title: 'et des récifs',
-            image: '',
-            description:'',
-            location: {
-                center: [166.88165, -11.65377],
-                zoom: 10.56,
-                pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:0.35
             },
             onChapterEnter: [
                 {
@@ -627,6 +1161,10 @@ var config = {
                 {
                     layer: 'vanikoro-reef-line',
                     opacity: 0.5
+                },
+                {
+                    layer: 'epaves',
+                    stroke: 0.5
                 },
             ],
             onChapterExit: [
@@ -639,6 +1177,45 @@ var config = {
                     opacity: 0
                 },
             ]  
-        },                 
+        },
+        {
+            id: '811',
+            alignment: 'full',
+            title: '811',
+            image: 'laperouse/Chronologie.png',
+            description:'',
+            location: {
+                center: [-50, 15],
+                zoom: 1.8,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+        },
+        {
+            id: '812',
+            alignment: 'right',
+            title: '812',
+            image: '',
+            description:'<left><span class="image main"><img src="laperouse/laperouse.jpg" alt=""  style="width:117.1px;height:200px;" /> </span></left><left><span class="image main"><img src="laperouse/expedition.jpg" alt=""  style="width:157.8px;height:200px;" /></span></left> <span class="image main"><img src="laperouse/memoires.jpg" alt=""  style="width:131.58px;height:200px;" /></span></left>',
+            location: {
+                center: [-175, 15],
+                zoom: 1,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+        },
+        {
+            id: '813',
+            alignment: 'right',
+            title: '812',
+            image: 'laperouse/laperouse_multi.png',
+            description:'Sources',
+            location: {
+                center: [-175, 15],
+                zoom: 1,
+                pitch: 0.00,
+                bearing: 0.00
+            },
+        },                      
     ]
 };
