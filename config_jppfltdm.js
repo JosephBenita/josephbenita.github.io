@@ -46,8 +46,8 @@ var config = {
                     opacity: 0.5
                 },
                 {
-                    layer: '',
-                    opacity: 0
+                    layer: 'geo-lines',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
@@ -164,9 +164,9 @@ var config = {
             id: '121',
             alignment: 'right',
             title: '121',
-            image: '',
+            image: 'laperouse/laperouse_multi.png',
             imageCredit:'',
-            description: '<center><span class="image main"><img src="laperouse/laperouse.png" alt=""  style="width:231.8px;height:300px;" /></span><p>Jean François de Galaup</p><p>Naissance 23 aout 1741 à Albi</p</center>',
+            description: '<center><p>Jean François de Galaup</p><p>Naissance 23 aout 1741 à Albi</p</center>',
             location: {
                 center: [2.22474, 43.93714],
                 zoom: 11.5,
@@ -358,10 +358,6 @@ var config = {
                     layer: 'world-1750',
                     opacity: 0
                 },
-                {
-                    layer: '',
-                    opacity: 0
-                },
             ]
         },
         {
@@ -380,7 +376,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'EN-1750-1763',
-                    opacity: 1
+                    opacity: 0.6
                 },
             ],
             onChapterExit: [
@@ -406,14 +402,10 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'FR-1750-1763',
-                    opacity: 1
+                    opacity: 0.8
                 },
             ],
             onChapterExit: [
-                {
-                    layer: 'world-1750',
-                    opacity: 0
-                },
                 {
                     layer: 'FR-1750-1763',
                     opacity: 0
@@ -508,6 +500,10 @@ var config = {
                     layer: 'front-ouest-label',
                     opacity: 0
                 },
+                {
+                    layer: 'indes-voie',
+                    opacity: 0.6
+                },
             ]  
         },
 
@@ -517,33 +513,44 @@ var config = {
             alignment: 'left',
             title: '421',
             image: '',
-            description: 'Océan indien 1/2',
+            description: 'Dans l\'océan indien en soutien à la compagnie des Indes',
             location: {
                 center: [40, -7],
                 zoom: 3,
                 pitch: 0.00,
-                bearing: 0.00
+                bearing: 0.00,
+                speed:1
             },
+            onChapterEnter: [
+                {
+                    layer: 'indes',
+                    opacity: 1
+                },
+                {
+                    layer: 'indes-label',
+                    opacity: 0.9
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'indes',
+                    opacity: 0
+                },
+                {
+                    layer: 'indes-label',
+                    opacity: 0
+                },
+                {
+                    layer: 'indes-voie',
+                    opacity: 0
+                },
+            ]
         },
         {
             id: '422',
             hidden:'',
-            alignment: 'left',
-            title: '422',
-            image: '',
-            description: 'Océan indien 2/2',
-            location: {
-                center: [40, -7],
-                zoom: 3,
-                pitch: 0.00,
-                bearing: 0.00
-            },
-        },
-        {
-            id: '423',
-            hidden:'',
             alignment: 'right',
-            title: '423',
+            title: '422',
             image: '',
             description: '<center><span class="image main"><img src="laperouse/Eleonore_Broudou.png" alt=""  style="width:220.1px;height:300px;" /></span><p>Eléonore Broudou, née à Nantes le 15 mai 1755</p><p>Fiche de l\'<a href="https://blogs.univ-jfc.fr/projetlaperouse/marin-et-soldat/dans-locean-indien/eleonore-broudou/" target="_blank">INU Champollion</a></p></center>',
             location: {
@@ -555,16 +562,16 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'mesnil',
+                    opacity: 0.9
                 },
             ]
         },
         {
-            id: '424',
+            id: '423',
             hidden:'',
             alignment: 'right',
-            title: '424',
+            title: '423',
             image: '',
             description: 'Retour en France',
             location: {
@@ -576,10 +583,20 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'poi-france',
+                    opacity: 0.9
                 },
-            ]
+            ],
+            onChapterExit: [
+                {
+                    layer: 'indes-voie',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-france',
+                    opacity: 0
+                },
+            ],
         },
         {
             id: '511',
@@ -589,45 +606,74 @@ var config = {
             image: '',
             description: 'La guerre d\'indépendance des Etats-Unis',
             location: {
-                center: [5, 46.50441],
-                zoom: 5.24,
+                center: [-25, 40],
+                zoom: 3,
                 pitch: 0.00,
                 bearing: 0.00,
                 speed:10
             },
             onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'us',
+                    opacity: 0.9
                 },
-            ]
+                {
+                    layer: 'us-label',
+                    opacity: 0.9
+                },
+                {
+                    layer: 'us-voie',
+                    opacity: 0.9
+                },
+            ],
         },
         {
             id: '512',
             hidden:'',
-            alignment: 'right',
+            alignment: 'left',
             title: '512',
             image: '',
-            description: '',
+            description: '<center><span class="image main"><img src="laperouse/saintes.png" alt=""  style="width:416.5px;height:300px;" /></span><p>La bataille des Saintes</p><p>Fiche <a href="https://fr.wikipedia.org/wiki/Bataille_des_Saintes" target="_blank">Wikipédia</a></p></center>',
             location: {
-                center: [-25, 40],
-                zoom: 3,
+                center: [-62.04257, 15.66748],
+                zoom: 8.6,
                 pitch: 0.00,
                 bearing: 0.00,
-                speed:10
+                speed:2
             },
-            onChapterEnter: [
-                {
-                    layer: '',
-                    opacity: 0.5
-                },
-            ]
         },        
         {
-            id: '521',
+            id: '513',
             hidden:'',
             alignment: 'right',
-            title: '521',
+            title: '513',
+            image: '',
+            description: '<center><span class="image main"><img src="laperouse/fort.jpg" alt=""  style="width:430.5px;height:300px;" /></span><p>Une mission secrète dans la baie d\'Hudson</p><p>Fiche <a href="https://fr.wikipedia.org/wiki/Exp%C3%A9dition_de_la_baie_d%27Hudson" target="_blank">Wikipédia</a></p></center>',
+            location: {
+                center: [-63.44630, 59.96458],
+                zoom: 4,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:10
+            },
+            onChapterEnter: [
+                {
+                    layer: '',
+                    opacity: 0.5
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: '',
+                    opacity: 0
+                },
+            ]
+        },
+        {
+            id: '514',
+            hidden:'true',
+            alignment: 'right',
+            title: '514',
             image: '',
             description: '',
             location: {
@@ -637,54 +683,20 @@ var config = {
                 bearing: 0.00,
                 speed:10
             },
-            onChapterEnter: [
+            onChapterExit: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'us',
+                    opacity: 0
                 },
-            ]
-        },
-        {
-            id: '522',
-            hidden:'',
-            alignment: 'right',
-            title: '522',
-            image: '',
-            description: '',
-            location: {
-                center: [-25, 40],
-                zoom: 3,
-                pitch: 0.00,
-                bearing: 0.00,
-                speed:10
-            },
-            onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'us-label',
+                    opacity: 0
                 },
-            ]
-        },
-        {
-            id: '523',
-            hidden:'',
-            alignment: 'right',
-            title: '523',
-            image: '',
-            description: '',
-            location: {
-                center: [-60, 60],
-                zoom: 3.9,
-                pitch: 0.00,
-                bearing: 0.00,
-                speed:10
-            },
-            onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'us-voie',
+                    opacity: 0
                 },
-            ]
+            ],
         },
         {
             id: '611',
@@ -694,18 +706,55 @@ var config = {
             image: 'laperouse/Louis 16-Lapérouse.jpg',
             description: 'La préparation au départ 1/3',
             location: {
-                center: [5, 46.50441],
-                zoom: 5.24,
+                center: [-25, 40],
+                zoom: 2,
+                pitch: 0.00,
+                bearing: 0.00,
+                speed:1
+            },
+        },
+        {
+            id: '611b',
+            hidden:'true',
+            alignment: 'right',
+            title: '',
+            image: '',
+            description: '',
+            location: {
+                center: [-90, 5],
+                zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00,
                 speed:1
             },
             onChapterEnter: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: 'plan-point-label',
+                    opacity: 0.9
                 },
-            ]
+                {
+                    layer: 'plan-point',
+                    opacity: 0.9
+                },
+                {
+                    layer: 'plan',
+                    opacity: 0.7
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'plan-point-label',
+                    opacity: 0
+                },
+                {
+                    layer: 'plan-point',
+                    opacity: 0
+                },
+                {
+                    layer: 'plan',
+                    opacity: 0
+                },
+            ],
         },
         {
             id: '612',
@@ -740,7 +789,7 @@ var config = {
                 zoom: 5.24,
                 pitch: 0.00,
                 bearing: 0.00,
-                speed:0.35
+                speed:10.35
             },
             onChapterEnter: [
                 {
@@ -775,6 +824,20 @@ var config = {
                 {
                     layer: 'poi-exp1-label',
                     opacity: 1
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: '944-1',
+                    opacity: 0.2
+                },
+                {
+                    layer: 'poi-exp1',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp1-label',
+                    opacity: 0
                 },
             ]
         },
@@ -854,6 +917,10 @@ var config = {
                     layer: 'poi-exp2-label',
                     opacity: 1
                 },
+                {
+                    layer: '944-1',
+                    opacity: 0.2
+                },
             ]  
         },
         {
@@ -868,12 +935,20 @@ var config = {
                 zoom: 4.41,
                 pitch: 70.00,
                 bearing: 145,
-                speed:5
+                speed:10
             },
-            onChapterEnter: [
+            onChapterExit: [
                 {
-                    layer: '',
-                    opacity: 0.5
+                    layer: '944-2',
+                    opacity: 0.2
+                },
+                {
+                    layer: 'poi-exp2',
+                    opacity: 0
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 0
                 },
             ]
         },  
@@ -910,7 +985,7 @@ var config = {
                 zoom: 2,
                 pitch: 0.00,
                 bearing: 0.00,
-                speed:0.35
+                speed:10.35
             },
             onChapterEnter: [
                 {
@@ -924,6 +999,10 @@ var config = {
                 {
                     layer: 'poi-exp3-label',
                     opacity: 1
+                },
+                {
+                    layer: 'poi-exp2-label',
+                    opacity: 0
                 },
             ]
         },
@@ -954,7 +1033,7 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'poi-exp3',
-                    opacity: 0.6
+                    opacity: 0
                 },
             ]
         },
@@ -1021,41 +1100,16 @@ var config = {
                 },
                 {
                     layer: '944-1',
-                    opacity: 0.6
-                },
-                {
-                    layer: 'poi-exp1',
-                    opacity: 0.6
-                },
-                {
-                    layer: 'poi-exp1-label',
-                    opacity: ''
+                    opacity: 0.2
                 },
                 {
                     layer: '944-2',
-                    opacity: 0.6
-                },
-                {
-                    layer: 'poi-exp2',
-                    opacity: 0.6
-                },
-                {
-                    layer: 'poi-exp2-label',
-                    opacity: ''
+                    opacity: 0.2
                 },
                 {
                     layer: '944-3',
-                    opacity: 0.6
+                    opacity: 0.2
                 },
-                {
-                    layer: 'poi-exp3',
-                    opacity: 0.6
-                },
-                {
-                    layer: 'poi-exp3-label',
-                    opacity: ''
-                },
-
             ]
         },
         {
@@ -1103,13 +1157,13 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'epaves',
+                    layer: 'vanikoro',
                     stroke: 0.5
                 },
             ],
             onChapterExit: [
                 {
-                    layer: 'epaves',
+                    layer: 'vanikoro',
                     stroke: 0
                 },
             ]
@@ -1174,6 +1228,10 @@ var config = {
                 },
                 {
                     layer: 'vanikoro-reef-line',
+                    opacity: 0
+                },
+                {
+                    layer: 'epaves',
                     opacity: 0
                 },
             ]  
